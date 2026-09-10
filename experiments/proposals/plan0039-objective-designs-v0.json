@@ -1,0 +1,49 @@
+{
+  "format": "parity-forge:objective-design-drafts:v1",
+  "id": "plan0039-objective-designs-v0",
+  "status": "DESIGN_ONLY_NOT_IMPLEMENTED",
+  "authority": ["D-055", "D-064", "D-080"],
+  "limits": {"maximum_sketches": 3, "actual_sketches": 2, "independent_design_reviews": 1, "matches": 0, "proof_search_launches": 0, "engine_changes": 0},
+  "notes": [
+    "This draft format is authoritative for these proposals but is not accepted by an existing engine.",
+    "The constants are explicit initial design hypotheses, not calibrated balance claims.",
+    "No novelty, fairness, depth, fun or human-review eligibility is claimed."
+  ],
+  "sketches": [
+    {
+      "id": "bridge-and-convert-9-a-v0",
+      "name_ja": "架橋と転色",
+      "objective_family": "OPPOSITE_EDGE_CONNECTION",
+      "board": {"rows": 9, "cols": 9, "topology": "RHOMBUS_HEX_CELLS", "neighbor_deltas": [[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0]], "blocked": []},
+      "initial": {"A": [], "B": [], "to_move": "A", "bridge_credits_A": 3, "conversion_credits_B": 2},
+      "A_actions": [
+        {"kind": "PLACE_ONE", "target": "ANY_EMPTY_CELL", "effect": "COLOR_TARGET_A", "credit_cost": 0},
+        {"kind": "BRIDGE_PAIR", "targets": "TWO_DISTINCT_EMPTY_NEIGHBORING_CELLS", "target_order": "UNORDERED_CANONICAL_LEXICOGRAPHIC", "effect": "COLOR_BOTH_A", "requires": "bridge_credits_A >= 1", "credit_cost": 1}
+      ],
+      "B_actions": [
+        {"kind": "PLACE_ONE", "target": "ANY_EMPTY_CELL", "effect": "COLOR_TARGET_B", "credit_cost": 0},
+        {"kind": "PLACE_AND_CONVERT", "place_target": "ANY_EMPTY_CELL", "convert_target": "ONE_PREEXISTING_A_CELL_NEIGHBORING_PLACE_TARGET", "effect": "COLOR_PLACE_TARGET_AND_CONVERT_TARGET_B", "requires": "conversion_credits_B >= 1", "credit_cost": 1}
+      ],
+      "transition": {"atomic_action": true, "credit_update": "DECREMENT_ONLY_THE_USED_ROLE_SPECIFIC_CREDIT", "stone_removal": false, "pass": "FORBIDDEN", "after_action": ["CHECK_BOTH_CONNECTION_OBJECTIVES", "IF_EXACTLY_ONE_OBJECTIVE_HOLDS_STOP_WITH_ITS_OWNER_WINNING", "ELSE_SWITCH_PLAYER"]},
+      "victory": {"A": "A_COLORED_NEIGHBOR_PATH_FROM_COL_0_TO_COL_8", "B": "B_COLORED_NEIGHBOR_PATH_FROM_ROW_0_TO_ROW_8", "simultaneous_objectives": "IMPOSSIBLE_BY_HEX_TOPOLOGY; IF_OBSERVED_REJECT_STATE_AS_INVALID_NOT_A_DRAW_OR_TIEBREAK", "no_empty_cells_without_winner": "IMPOSSIBLE_BY_HEX_THEOREM; IF_OBSERVED_REJECT_STATE_AS_INVALID", "no_legal_action_loses": false},
+      "termination_argument": {"rank": "NUMBER_OF_EMPTY_CELLS", "initial_rank": 81, "decrease_per_action_minimum": 1, "maximum_actions": 81, "nonterminal_action_exists": "A_PLACE_ONE_OR_B_PLACE_ONE_IS_AVAILABLE_WHEN_ANY_EMPTY_CELL_REMAINS", "full_board_decision": "EXACTLY_ONE_CONNECTION_EXISTS_FOR_EVERY_COMPLETE_TWO_COLORING", "credits_are_not_scores_or_tiebreaks": true},
+      "external_mathematical_basis": {"title": "Hex implies Y", "author": "Tomasz Prytula", "year": 2021, "url": "https://arxiv.org/pdf/2102.02621", "used_claim": "HEX_THEOREM_FOR_FULL_COLORINGS_AND_EXCLUSION_OF_CROSSING_OPPOSITE_COLOR_PATHS", "not_transferred": ["STANDARD_HEX_FIRST_PLAYER_STRATEGY", "BALANCE", "COMPUTATIONAL_HARDNESS", "FUN"]},
+      "design_hypothesis": "A spends a limited resource to build adjacent links quickly; B spends a different limited resource to convert a contact stone and reroute both players' connections.",
+      "risks": ["CONVERSION_MAY_DOMINATE_CONNECTION_BUILDING", "FIRST_PLAYER_ADVANTAGE_UNKNOWN", "RESOURCE_COUNTS_ARE_UNCALIBRATED", "AFTER_CREDITS_ARE_SPENT_ACTION_SETS_BECOME_SYMMETRIC", "TACTICAL_BRANCHING_HIGH", "NOVELTY_NOT_SURVEYED"]
+    },
+    {
+      "id": "courier-and-interceptors-7-12-v0",
+      "name_ja": "突破と迎撃",
+      "objective_family": "TIMED_ARRIVAL_OR_CAPTURE_DEFENCE",
+      "board": {"rows": 7, "cols": 7, "topology": "SQUARE_CELLS", "blocked": []},
+      "initial": {"courier_A": [6,3], "interceptors_B": [[2,1],[2,3],[2,5]], "to_move": "A", "completed_rounds": 0},
+      "A_actions": [{"kind": "COURIER_STEP", "target": "IN_BOUNDS_EMPTY_KING_NEIGHBOR_OF_COURIER", "maximum_distance": 1, "capture": false}],
+      "B_actions": [{"kind": "INTERCEPTOR_SLIDE", "piece": "ONE_INTERCEPTOR", "target": "IN_BOUNDS_CELL_ONE_OR_TWO_ORTHOGONAL_STEPS_AWAY", "intermediate_cells": "EMPTY", "destination": "EMPTY_OR_COURIER_A; NOT_ANOTHER_INTERCEPTOR", "capture": "REMOVE_COURIER_IF_LANDING_ON_IT"}],
+      "transition": {"atomic_action": true, "pass": "REQUIRED_IF_AND_ONLY_IF_ACTIVE_ROLE_HAS_NO_LEGAL_MOVE; DOES_NOT_ITSELF_CAUSE_LOSS", "turn_order": "A_THEN_B_PER_ROUND", "after_A_action_or_forced_pass": ["IF_COURIER_ON_ROW_0_A_WINS_IMMEDIATELY", "ELSE_B_TO_MOVE"], "after_B_action_or_forced_pass": ["IF_COURIER_CAPTURED_B_WINS_IMMEDIATELY", "ELSE_INCREMENT_COMPLETED_ROUNDS", "IF_COMPLETED_ROUNDS_EQUALS_12_B_WINS_BY_PREVENTING_ARRIVAL_WITHIN_THE_WINDOW", "ELSE_A_TO_MOVE"]},
+      "victory": {"A": "COURIER_REACHES_ANY_CELL_OF_ROW_0_DURING_AT_MOST_12_A_TURNS", "B": "CAPTURE_COURIER_OR_PREVENT_ARRIVAL_THROUGH_END_OF_ROUND_12", "precedence": "A_ARRIVAL_ENDS_BEFORE_ANY_B_RESPONSE; B_CAPTURE_ENDS_BEFORE_DEADLINE_CHECK", "no_legal_action_loses": false, "draw": "NONE"},
+      "termination_argument": {"rank": "24_MINUS_RESOLVED_TURNS_INCLUDING_FORCED_PASSES", "initial_rank": 24, "decrease_per_action_minimum": 1, "maximum_actions": 24, "end_of_window": "B_OBJECTIVE_IS_THE_EXPLICIT_COMPLEMENT_OF_A_REACHING_THE_GOAL_WITHIN_12_ROUNDS", "deadline_status": "PROPOSED_SUBSTANTIVE_RULE_NOT_COMPUTATIONAL_TIMEOUT_OR_RETROACTIVE_TIEBREAK"},
+      "design_hypothesis": "One mobile courier attempts a visible breakthrough while three orthogonally faster interceptors coordinate captures and coverage.",
+      "risks": ["DEADLINE_DEFENCE_MAY_FEEL_LIKE_A_WORKAROUND_RATHER_THAN_AN_ENGAGING_OBJECTIVE", "TWELVE_ROUND_CONSTANT_UNCALIBRATED", "POSITION_MAY_HAVE_A_SHORT_DOMINANT_STRATEGY", "GUARD_CAMPING_AND_COURIER_CYCLES_MAY_BE_DULL", "TIME_LIMIT_IS_PART_OF_RULES_NOT_EVIDENCE_OF_DEPTH", "NOVELTY_NOT_SURVEYED"]
+    }
+  ]
+}

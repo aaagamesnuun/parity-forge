@@ -1,0 +1,176 @@
+{
+  "corpus_id": "static-v1-2026-08-31",
+  "frozen": true,
+  "purpose": "Manual fixtures for DSL validity and cheap degeneracy diagnostics",
+  "cases": [
+    {
+      "id": "healthy-crossing-seeds",
+      "expected_failures": [],
+      "definition": {
+        "schema_version": 1,
+        "name": "Crossing Seeds",
+        "board_size": 3,
+        "first_player": "A",
+        "max_plies": 20,
+        "roles": {
+          "A": {
+            "action": {"kind": "PLACE", "piece": "seed"},
+            "goal": {"kind": "CONNECT_EDGES", "piece": "seed", "edges": ["TOP", "BOTTOM"]}
+          },
+          "B": {
+            "action": {"kind": "MOVE", "piece": "runner", "vectors": [[-1, 0], [0, -1], [0, 1], [1, 0]]},
+            "goal": {"kind": "REACH_EDGE", "piece": "runner", "edge": "TOP"}
+          }
+        },
+        "initial_pieces": [{"owner": "B", "piece": "runner", "position": [2, 1]}]
+      }
+    },
+    {
+      "id": "full-board-no-opening",
+      "expected_failures": ["NO_LEGAL_MOVE_AT_START"],
+      "definition": {
+        "schema_version": 1,
+        "name": "No Opening",
+        "board_size": 3,
+        "first_player": "A",
+        "max_plies": 20,
+        "roles": {
+          "A": {
+            "action": {"kind": "PLACE", "piece": "seed"},
+            "goal": {"kind": "CONNECT_EDGES", "piece": "seed", "edges": ["TOP", "BOTTOM"]}
+          },
+          "B": {
+            "action": {"kind": "MOVE", "piece": "runner", "vectors": [[-1, 0], [0, -1], [0, 1], [1, 0]]},
+            "goal": {"kind": "REACH_EDGE", "piece": "runner", "edge": "TOP"}
+          }
+        },
+        "initial_pieces": [
+          {"owner": "B", "piece": "block", "position": [0, 0]},
+          {"owner": "B", "piece": "block", "position": [0, 1]},
+          {"owner": "B", "piece": "block", "position": [0, 2]},
+          {"owner": "B", "piece": "block", "position": [1, 0]},
+          {"owner": "B", "piece": "block", "position": [1, 1]},
+          {"owner": "B", "piece": "block", "position": [1, 2]},
+          {"owner": "B", "piece": "block", "position": [2, 0]},
+          {"owner": "B", "piece": "runner", "position": [2, 1]},
+          {"owner": "B", "piece": "block", "position": [2, 2]}
+        ]
+      }
+    },
+    {
+      "id": "missing-runner",
+      "expected_failures": ["UNREACHABLE_WIN_CONDITION"],
+      "definition": {
+        "schema_version": 1,
+        "name": "Missing Runner",
+        "board_size": 3,
+        "first_player": "A",
+        "max_plies": 20,
+        "roles": {
+          "A": {
+            "action": {"kind": "PLACE", "piece": "seed"},
+            "goal": {"kind": "CONNECT_EDGES", "piece": "seed", "edges": ["TOP", "BOTTOM"]}
+          },
+          "B": {
+            "action": {"kind": "MOVE", "piece": "runner", "vectors": [[-1, 0], [0, -1], [0, 1], [1, 0]]},
+            "goal": {"kind": "REACH_EDGE", "piece": "runner", "edge": "TOP"}
+          }
+        },
+        "initial_pieces": []
+      }
+    },
+    {
+      "id": "initial-connection",
+      "expected_failures": ["TRIVIAL_FORCED_RESULT"],
+      "definition": {
+        "schema_version": 1,
+        "name": "Already Connected",
+        "board_size": 3,
+        "first_player": "A",
+        "max_plies": 20,
+        "roles": {
+          "A": {
+            "action": {"kind": "PLACE", "piece": "seed"},
+            "goal": {"kind": "CONNECT_EDGES", "piece": "seed", "edges": ["TOP", "BOTTOM"]}
+          },
+          "B": {
+            "action": {"kind": "MOVE", "piece": "runner", "vectors": [[-1, 0], [0, -1], [0, 1], [1, 0]]},
+            "goal": {"kind": "REACH_EDGE", "piece": "runner", "edge": "TOP"}
+          }
+        },
+        "initial_pieces": [
+          {"owner": "A", "piece": "seed", "position": [0, 0]},
+          {"owner": "A", "piece": "seed", "position": [1, 0]},
+          {"owner": "A", "piece": "seed", "position": [2, 0]},
+          {"owner": "B", "piece": "runner", "position": [2, 2]}
+        ]
+      }
+    },
+    {
+      "id": "same-action-roles",
+      "expected_failures": ["TOO_SYMMETRIC"],
+      "definition": {
+        "schema_version": 1,
+        "name": "Renamed Placers",
+        "board_size": 3,
+        "first_player": "A",
+        "max_plies": 20,
+        "roles": {
+          "A": {
+            "action": {"kind": "PLACE", "piece": "seed"},
+            "goal": {"kind": "CONNECT_EDGES", "piece": "seed", "edges": ["TOP", "BOTTOM"]}
+          },
+          "B": {
+            "action": {"kind": "PLACE", "piece": "runner"},
+            "goal": {"kind": "REACH_EDGE", "piece": "runner", "edge": "TOP"}
+          }
+        },
+        "initial_pieces": []
+      }
+    },
+    {
+      "id": "over-parameterized-movement",
+      "expected_failures": ["TOO_COMPLEX"],
+      "definition": {
+        "schema_version": 1,
+        "name": "Eight Directions",
+        "board_size": 3,
+        "first_player": "A",
+        "max_plies": 20,
+        "roles": {
+          "A": {
+            "action": {"kind": "PLACE", "piece": "seed"},
+            "goal": {"kind": "CONNECT_EDGES", "piece": "seed", "edges": ["TOP", "BOTTOM"]}
+          },
+          "B": {
+            "action": {"kind": "MOVE", "piece": "runner", "vectors": [[-1, -1], [-1, 0], [-1, 1], [0, -1], [0, 1], [1, -1], [1, 0], [1, 1]]},
+            "goal": {"kind": "REACH_EDGE", "piece": "runner", "edge": "TOP"}
+          }
+        },
+        "initial_pieces": [{"owner": "B", "piece": "runner", "position": [2, 1]}]
+      }
+    },
+    {
+      "id": "invalid-board-size",
+      "expected_failures": ["INVALID_DEFINITION"],
+      "definition": {
+        "schema_version": 1,
+        "name": "Too Small",
+        "board_size": 2,
+        "first_player": "A",
+        "max_plies": 10,
+        "roles": {
+          "A": {
+            "action": {"kind": "PLACE", "piece": "seed"},
+            "goal": {"kind": "CONNECT_EDGES", "piece": "seed", "edges": ["TOP", "BOTTOM"]}
+          },
+          "B": {
+            "action": {"kind": "MOVE", "piece": "runner", "vectors": [[-1, 0]]},
+            "goal": {"kind": "REACH_EDGE", "piece": "runner", "edge": "TOP"}
+          }
+        },
+        "initial_pieces": [{"owner": "B", "piece": "runner", "position": [1, 0]}]
+      }
+    }
+  ]
+}

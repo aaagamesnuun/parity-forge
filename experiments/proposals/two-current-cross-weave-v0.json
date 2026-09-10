@@ -1,0 +1,145 @@
+{
+  "status": "FIXED_PROSPECTIVE_NOT_REGISTERED_NOT_PRODUCTION_EXECUTED",
+  "exposure": "SOURCE_DESIGNED_AFTER_PLAN0027_AND_FOUR_REJECTED_PRESELECTION_WIRES_WITH_ROOT_ENGINE_AND_INDEPENDENT_BOUNDED_AND_OR_AND_REACHABLE_STATE_LOWER_BOUND_EXPOSED_NOT_CONFIRMATION",
+  "definitions": [
+    {
+      "schema_version": 4,
+      "name": "two-current-cross-weave-v0",
+      "board_size": 5,
+      "first_player": "A",
+      "max_plies": 51,
+      "roles": {
+        "A": {
+          "action": {
+            "kind": "HOP",
+            "piece": "a",
+            "vectors": [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          },
+          "goal": {
+            "kind": "CONNECT_EDGES",
+            "piece": "a",
+            "edges": [
+              "BOTTOM",
+              "TOP"
+            ]
+          }
+        },
+        "B": {
+          "action": {
+            "kind": "PUSH",
+            "piece": "b",
+            "vectors": [
+              [
+                -1,
+                -1
+              ],
+              [
+                -1,
+                0
+              ]
+            ]
+          },
+          "goal": {
+            "kind": "CONNECT_EDGES",
+            "piece": "b",
+            "edges": [
+              "LEFT",
+              "RIGHT"
+            ]
+          }
+        }
+      },
+      "initial_pieces": [
+        {
+          "owner": "A",
+          "piece": "a",
+          "position": [
+            0,
+            0
+          ]
+        },
+        {
+          "owner": "A",
+          "piece": "a",
+          "position": [
+            1,
+            1
+          ]
+        },
+        {
+          "owner": "A",
+          "piece": "a",
+          "position": [
+            2,
+            0
+          ]
+        },
+        {
+          "owner": "B",
+          "piece": "b",
+          "position": [
+            2,
+            2
+          ]
+        },
+        {
+          "owner": "B",
+          "piece": "b",
+          "position": [
+            3,
+            0
+          ]
+        },
+        {
+          "owner": "A",
+          "piece": "a",
+          "position": [
+            3,
+            1
+          ]
+        },
+        {
+          "owner": "B",
+          "piece": "b",
+          "position": [
+            3,
+            4
+          ]
+        },
+        {
+          "owner": "A",
+          "piece": "a",
+          "position": [
+            4,
+            0
+          ]
+        },
+        {
+          "owner": "B",
+          "piece": "b",
+          "position": [
+            4,
+            1
+          ]
+        },
+        {
+          "owner": "B",
+          "piece": "b",
+          "position": [
+            4,
+            3
+          ]
+        }
+      ]
+    }
+  ]
+}

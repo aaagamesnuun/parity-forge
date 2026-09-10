@@ -1,0 +1,606 @@
+{
+  "status": "DESIGN_STAGE_COMPLETE_FOUR_DEFINITIONS_COHORT_ADMITTED_NOT_REGISTERED_PRODUCTION_COUNT_ZERO",
+  "exposure": "CELL1_UNCHANGED_OUTCOME_EXPOSED_PLAN0029_DRAFT_NOT_CONFIRMATION_CELLS2_TO_4_SOURCE_ONLY_STATIC_AND_FIXED_PREFIX_REPLAY",
+  "draft_ceiling": {
+    "maximum_total_definitions": 7,
+    "maximum_named_prefixes_per_definition": 4,
+    "maximum_primary_replay_count": 28,
+    "maximum_independent_audit_replay_count": 28,
+    "schema_max_plies": 1000,
+    "maximum_natural_plies_per_new_definition": 999,
+    "dsl_general_transition_ceiling": 55944,
+    "plan_specific_transition_ceiling_before_drafting": 48272,
+    "attempted_definitions": 4,
+    "uninspected_second_drafts": [2, 3, 4],
+    "attempted_definition_transition_ceiling": 1376,
+    "actual_prefix_replays": 22,
+    "actual_replayed_transitions": 280,
+    "selection_games": 0,
+    "exact_calls": 0,
+    "selection_and_or_queries": 0,
+    "reachable_state_prefixes": 0
+  },
+  "cohort_admission": {
+    "status": "PASS",
+    "independent_read_only_audit": "PASS",
+    "role_neutral_action_goal_signatures": [
+      "HOP_CONNECT_EDGES__SWAP_CONNECT_EDGES",
+      "PUSH_CONNECT_EDGES__MOVE_CAPTURE_ELIMINATE",
+      "MOVE_CAPTURE_CONNECT_EDGES__SWAP_REACH_EDGE",
+      "HOP_CONNECT_EDGES__MOVE_CAPTURE_REACH_EDGE"
+    ],
+    "pairwise_signature_collisions": 0,
+    "plans_20_to_28_signature_collisions": 0,
+    "plan_29_other_draft_signature_collisions": 0,
+    "cell_1_unchanged_plan_29_copy_exempted": true,
+    "public_old_six_direct": [false, false, false, false],
+    "public_old_six_role_swap": [false, false, false, false],
+    "sum_maximum_branching": 60,
+    "sum_maximum_decisions_per_role": 86,
+    "sum_max_natural_plies": 172,
+    "sum_max_plies": 176,
+    "sum_t3_nodes_per_role": 310890,
+    "t2_schedule_structural_nodes": 165120,
+    "t3_schedule_structural_nodes": 2487120,
+    "combined_schedule_structural_nodes": 2652240,
+    "all_game_role_calls_at_t3_conservative_bound": 4974240,
+    "configured_game_agent_nodes": 6400000,
+    "short_query_misses": 1600000,
+    "exact_searched_states": 400000,
+    "bfs_transitions": 6000060,
+    "adapter_internal_replay_transitions": 1584,
+    "actual_game_plies": 1408,
+    "maximum_attempts": 56,
+    "maximum_run_artifact_files": 118,
+    "maximum_published_bytes": 272629760
+  },
+  "fixed_rank": [
+    {
+      "cell": 1,
+      "status": "FIXED_INHERITED_STATIC_LANE_PASSED_FINAL_COHORT_ADMITTED",
+      "name": "five-thread-hop-swap-connect-v0",
+      "definition_hash": "a6de32c2b481614901caeabd2f2414815088a2b60992a3c4a55b7041aa2b7908",
+      "definition_source": "experiments/proposals/plan0029-four-structure-rejected-v0.json#definitions/0"
+    },
+    {
+      "cell": 2,
+      "status": "DRAFT1_STATIC_LANE_PASSED_FINAL_COHORT_ADMITTED_DRAFT2_NOT_INSPECTED",
+      "name": "five-thread-push-capture-triad-v0",
+      "definition_hash": "641c04d91572f4b748e927fe45490233a1ff71eb61cd5ab030a0e54c57bef4be"
+    },
+    {
+      "cell": 3,
+      "status": "DRAFT1_STATIC_LANE_PASSED_FINAL_COHORT_ADMITTED_DRAFT2_NOT_INSPECTED",
+      "structure": "MOVE_CAPTURE_CONNECT_EDGES_VS_SWAP_REACH_EDGE",
+      "name": "five-thread-capture-swap-bridge-v0",
+      "definition_hash": "247adb1bd139def5650fdfe0f8e0f9a78bc36147b08a505ab27e64d9fa8b03be"
+    },
+    {
+      "cell": 4,
+      "status": "DRAFT1_STATIC_LANE_PASSED_FINAL_COHORT_ADMITTED_DRAFT2_NOT_INSPECTED",
+      "structure": "HOP_CONNECT_EDGES_VS_MOVE_CAPTURE_REACH_EDGE",
+      "name": "full-rank-hop-capture-thread-v0",
+      "definition_hash": "5b5b5c4c88fcabe0017c8ecc2749a74c639ab6dd35a03cca8455106f416fca11"
+    }
+  ],
+  "drafts": [
+    {
+      "cell": 1,
+      "draft": 1,
+      "status": "INHERITED_DEFINITION_STATIC_LANE_PASSED_FINAL_COHORT_ADMITTED",
+      "definition_hash": "a6de32c2b481614901caeabd2f2414815088a2b60992a3c4a55b7041aa2b7908",
+      "definition_source": "experiments/proposals/plan0029-four-structure-rejected-v0.json#definitions/0",
+      "static_admission": {
+        "public_old_six_direct": false,
+        "public_old_six_role_swap": false,
+        "initial_terminal": false,
+        "initial_legal_action_count": 13,
+        "potential": "sum_A(4-row)+sum_B(row)",
+        "initial_potential": 40,
+        "max_natural_plies": 40,
+        "every_action_strict_decrease": true,
+        "ply_limit_unreachable": true,
+        "maximum_branching": 15,
+        "maximum_decisions_per_role": 20,
+        "t3_nodes_per_role": 72300
+      },
+      "prefixes": [
+        {
+          "name": "a_connect_goal",
+          "primary_replay_count": 1,
+          "independent_audit_replay_count": 1,
+          "actions": [
+            {"kind": "HOP", "from": [0, 4], "to": [1, 4]},
+            {"kind": "SWAP", "from": [4, 2], "to": [3, 1]},
+            {"kind": "HOP", "from": [1, 4], "to": [2, 4]},
+            {"kind": "SWAP", "from": [4, 0], "to": [3, 0]},
+            {"kind": "HOP", "from": [2, 4], "to": [3, 3]},
+            {"kind": "SWAP", "from": [4, 4], "to": [3, 4]},
+            {"kind": "HOP", "from": [3, 3], "to": [4, 2]},
+            {"kind": "SWAP", "from": [3, 0], "to": [2, 0]},
+            {"kind": "HOP", "from": [0, 3], "to": [1, 3]},
+            {"kind": "SWAP", "from": [3, 4], "to": [2, 4]},
+            {"kind": "HOP", "from": [1, 3], "to": [2, 3]},
+            {"kind": "SWAP", "from": [3, 1], "to": [2, 1]},
+            {"kind": "HOP", "from": [2, 3], "to": [3, 2]},
+            {"kind": "SWAP", "from": [2, 0], "to": [1, 0]},
+            {"kind": "HOP", "from": [0, 0], "to": [1, 1]},
+            {"kind": "SWAP", "from": [2, 4], "to": [1, 4]},
+            {"kind": "HOP", "from": [1, 1], "to": [2, 2]},
+            {"kind": "SWAP", "from": [2, 1], "to": [1, 1]},
+            {"kind": "HOP", "from": [0, 1], "to": [1, 2]}
+          ],
+          "plies": 19,
+          "winner": "A",
+          "terminal_reason": "GOAL",
+          "earlier_terminal": false,
+          "actual_hop_count": 0,
+          "actual_swap_count": 0
+        },
+        {
+          "name": "b_connect_goal_with_swap",
+          "primary_replay_count": 1,
+          "independent_audit_replay_count": 1,
+          "actions": [
+            {"kind": "HOP", "from": [0, 4], "to": [1, 4]},
+            {"kind": "SWAP", "from": [4, 0], "to": [3, 1]},
+            {"kind": "HOP", "from": [1, 4], "to": [2, 4]},
+            {"kind": "SWAP", "from": [3, 1], "to": [2, 2]},
+            {"kind": "HOP", "from": [0, 3], "to": [1, 3]},
+            {"kind": "SWAP", "from": [2, 2], "to": [1, 2]},
+            {"kind": "HOP", "from": [1, 3], "to": [2, 3]},
+            {"kind": "SWAP", "from": [1, 2], "to": [0, 2]},
+            {"kind": "HOP", "from": [0, 0], "to": [1, 0]},
+            {"kind": "SWAP", "from": [4, 4], "to": [3, 3]},
+            {"kind": "HOP", "from": [1, 0], "to": [2, 0]},
+            {"kind": "SWAP", "from": [3, 3], "to": [2, 2]},
+            {"kind": "HOP", "from": [2, 0], "to": [3, 0]},
+            {"kind": "SWAP", "from": [2, 2], "to": [1, 2]},
+            {"kind": "HOP", "from": [0, 1], "to": [1, 1]},
+            {"kind": "SWAP", "from": [4, 3], "to": [3, 3]},
+            {"kind": "HOP", "from": [1, 1], "to": [2, 1]},
+            {"kind": "SWAP", "from": [3, 3], "to": [2, 2]},
+            {"kind": "HOP", "from": [2, 1], "to": [3, 1]},
+            {"kind": "SWAP", "from": [4, 1], "to": [3, 2]}
+          ],
+          "plies": 20,
+          "winner": "B",
+          "terminal_reason": "GOAL",
+          "earlier_terminal": false,
+          "actual_hop_count": 0,
+          "actual_swap_count": 3
+        },
+        {
+          "name": "actual_hop_nonterminal",
+          "primary_replay_count": 1,
+          "independent_audit_replay_count": 1,
+          "actions": [
+            {"kind": "HOP", "from": [0, 0], "to": [1, 0]},
+            {"kind": "SWAP", "from": [4, 0], "to": [3, 0]},
+            {"kind": "HOP", "from": [1, 0], "to": [2, 0]},
+            {"kind": "SWAP", "from": [4, 4], "to": [3, 4]},
+            {"kind": "HOP", "from": [2, 0], "to": [4, 0]}
+          ],
+          "plies": 5,
+          "winner": null,
+          "terminal_reason": null,
+          "earlier_terminal": false,
+          "actual_hop_count": 1,
+          "actual_swap_count": 0
+        },
+        {
+          "name": "actual_swap_nonterminal",
+          "primary_replay_count": 1,
+          "independent_audit_replay_count": 1,
+          "actions": [
+            {"kind": "HOP", "from": [0, 0], "to": [1, 0]},
+            {"kind": "SWAP", "from": [4, 0], "to": [3, 0]},
+            {"kind": "HOP", "from": [1, 0], "to": [2, 0]},
+            {"kind": "SWAP", "from": [3, 0], "to": [2, 0]}
+          ],
+          "plies": 4,
+          "winner": null,
+          "terminal_reason": null,
+          "earlier_terminal": false,
+          "actual_hop_count": 0,
+          "actual_swap_count": 1
+        }
+      ],
+      "forbidden_design_computation_counts": {
+        "games": 0,
+        "exact": 0,
+        "selection_and_or": 0,
+        "reachable_state_prefix": 0
+      }
+    },
+    {
+      "cell": 2,
+      "draft": 1,
+      "status": "DRAFT_STATIC_LANE_PASSED_FINAL_COHORT_ADMITTED",
+      "definition_hash": "641c04d91572f4b748e927fe45490233a1ff71eb61cd5ab030a0e54c57bef4be",
+      "definition": {
+        "schema_version": 4,
+        "name": "five-thread-push-capture-triad-v0",
+        "board_size": 5,
+        "first_player": "A",
+        "max_plies": 53,
+        "roles": {
+          "A": {
+            "action": {
+              "kind": "PUSH",
+              "piece": "a",
+              "vectors": [[1, -1], [1, 0], [1, 1]]
+            },
+            "goal": {
+              "kind": "CONNECT_EDGES",
+              "piece": "a",
+              "edges": ["BOTTOM", "TOP"]
+            }
+          },
+          "B": {
+            "action": {
+              "kind": "MOVE_CAPTURE",
+              "piece": "b",
+              "vectors": [[-1, -1], [-1, 0], [-1, 1]]
+            },
+            "goal": {"kind": "ELIMINATE", "piece": "a"}
+          }
+        },
+        "initial_pieces": [
+          {"owner": "A", "piece": "a", "position": [0, 0]},
+          {"owner": "A", "piece": "a", "position": [0, 1]},
+          {"owner": "A", "piece": "a", "position": [0, 2]},
+          {"owner": "A", "piece": "a", "position": [0, 3]},
+          {"owner": "A", "piece": "a", "position": [0, 4]},
+          {"owner": "B", "piece": "b", "position": [4, 0]},
+          {"owner": "B", "piece": "b", "position": [4, 2]},
+          {"owner": "B", "piece": "b", "position": [4, 4]}
+        ]
+      },
+      "static_admission": {
+        "public_old_six_direct": false,
+        "public_old_six_role_swap": false,
+        "initial_terminal": false,
+        "initial_legal_action_count": 13,
+        "potential": "2*sum_A(4-row)+sum_B(row)",
+        "initial_potential": 52,
+        "max_natural_plies": 52,
+        "every_action_strict_decrease": true,
+        "ply_limit_unreachable": true,
+        "maximum_branching": 15,
+        "maximum_decisions_per_role": 26,
+        "t3_nodes_per_role": 93990
+      },
+      "prefixes": [
+        {
+          "name": "a_connect_goal",
+          "primary_replay_count": 1,
+          "independent_audit_replay_count": 1,
+          "actions": [
+            {"kind": "PUSH", "from": [0, 4], "to": [1, 4]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 2], "to": [3, 1]},
+            {"kind": "PUSH", "from": [1, 4], "to": [2, 4]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 0], "to": [3, 0]},
+            {"kind": "PUSH", "from": [2, 4], "to": [3, 3]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 4], "to": [3, 4]},
+            {"kind": "PUSH", "from": [3, 3], "to": [4, 2]},
+            {"kind": "MOVE_CAPTURE", "from": [3, 0], "to": [2, 0]},
+            {"kind": "PUSH", "from": [0, 3], "to": [1, 3]},
+            {"kind": "MOVE_CAPTURE", "from": [3, 4], "to": [2, 4]},
+            {"kind": "PUSH", "from": [1, 3], "to": [2, 3]},
+            {"kind": "MOVE_CAPTURE", "from": [3, 1], "to": [2, 1]},
+            {"kind": "PUSH", "from": [2, 3], "to": [3, 2]},
+            {"kind": "MOVE_CAPTURE", "from": [2, 0], "to": [1, 0]},
+            {"kind": "PUSH", "from": [0, 0], "to": [1, 1]},
+            {"kind": "MOVE_CAPTURE", "from": [2, 4], "to": [1, 4]},
+            {"kind": "PUSH", "from": [1, 1], "to": [2, 2]},
+            {"kind": "MOVE_CAPTURE", "from": [2, 1], "to": [1, 1]},
+            {"kind": "PUSH", "from": [0, 1], "to": [1, 2]}
+          ],
+          "plies": 19,
+          "winner": "A",
+          "terminal_reason": "GOAL",
+          "earlier_terminal": false,
+          "actual_push_count": 0,
+          "actual_capture_count": 0
+        },
+        {
+          "name": "b_eliminate_goal_with_both_effects",
+          "primary_replay_count": 1,
+          "independent_audit_replay_count": 1,
+          "actions": [
+            {"kind": "PUSH", "from": [0, 0], "to": [1, 0]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 0], "to": [3, 0]},
+            {"kind": "PUSH", "from": [1, 0], "to": [2, 0]},
+            {"kind": "MOVE_CAPTURE", "from": [3, 0], "to": [2, 0]},
+            {"kind": "PUSH", "from": [0, 1], "to": [1, 1]},
+            {"kind": "MOVE_CAPTURE", "from": [2, 0], "to": [1, 1]},
+            {"kind": "PUSH", "from": [0, 4], "to": [1, 4]},
+            {"kind": "MOVE_CAPTURE", "from": [1, 1], "to": [0, 2]},
+            {"kind": "PUSH", "from": [0, 3], "to": [1, 3]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 4], "to": [3, 4]},
+            {"kind": "PUSH", "from": [1, 3], "to": [2, 3]},
+            {"kind": "MOVE_CAPTURE", "from": [3, 4], "to": [2, 3]},
+            {"kind": "PUSH", "from": [1, 4], "to": [2, 3]},
+            {"kind": "MOVE_CAPTURE", "from": [3, 2], "to": [2, 3]}
+          ],
+          "plies": 14,
+          "winner": "B",
+          "terminal_reason": "GOAL",
+          "earlier_terminal": false,
+          "actual_push_count": 1,
+          "actual_capture_count": 5
+        }
+      ],
+      "forbidden_design_computation_counts": {
+        "games": 0,
+        "exact": 0,
+        "selection_and_or": 0,
+        "reachable_state_prefix": 0
+      }
+    },
+    {
+      "cell": 3,
+      "draft": 1,
+      "status": "DRAFT_STATIC_LANE_PASSED_FINAL_COHORT_ADMITTED",
+      "definition_hash": "247adb1bd139def5650fdfe0f8e0f9a78bc36147b08a505ab27e64d9fa8b03be",
+      "definition": {
+        "schema_version": 4,
+        "name": "five-thread-capture-swap-bridge-v0",
+        "board_size": 5,
+        "first_player": "A",
+        "max_plies": 41,
+        "roles": {
+          "A": {
+            "action": {
+              "kind": "MOVE_CAPTURE",
+              "piece": "a",
+              "vectors": [[1, -1], [1, 0], [1, 1]]
+            },
+            "goal": {
+              "kind": "CONNECT_EDGES",
+              "piece": "a",
+              "edges": ["BOTTOM", "TOP"]
+            }
+          },
+          "B": {
+            "action": {
+              "kind": "SWAP",
+              "piece": "b",
+              "vectors": [[-1, -1], [-1, 0], [-1, 1]]
+            },
+            "goal": {"kind": "REACH_EDGE", "piece": "b", "edge": "TOP"}
+          }
+        },
+        "initial_pieces": [
+          {"owner": "A", "piece": "a", "position": [0, 0]},
+          {"owner": "A", "piece": "a", "position": [0, 1]},
+          {"owner": "A", "piece": "a", "position": [0, 2]},
+          {"owner": "A", "piece": "a", "position": [0, 3]},
+          {"owner": "A", "piece": "a", "position": [0, 4]},
+          {"owner": "B", "piece": "b", "position": [4, 0]},
+          {"owner": "B", "piece": "b", "position": [4, 1]},
+          {"owner": "B", "piece": "b", "position": [4, 2]},
+          {"owner": "B", "piece": "b", "position": [4, 3]},
+          {"owner": "B", "piece": "b", "position": [4, 4]}
+        ]
+      },
+      "static_admission": {
+        "public_old_six_direct": false,
+        "public_old_six_role_swap": false,
+        "initial_terminal": false,
+        "initial_legal_action_count": 13,
+        "initial_legal_tuple_sha256": "5e2ffbaa8c5ca1a09c3350d7d5623d399b590745ec3004a1d6bf9e96fe3f605c",
+        "potential": "sum_A(4-row)+sum_B(row)",
+        "initial_potential": 40,
+        "max_natural_plies": 40,
+        "every_action_strict_decrease": true,
+        "ply_limit_unreachable": true,
+        "maximum_branching": 15,
+        "maximum_decisions_per_role": 20,
+        "t3_nodes_per_role": 72300
+      },
+      "prefixes": [
+        {
+          "name": "a_connect_goal_with_capture",
+          "primary_replay_count": 1,
+          "independent_audit_replay_count": 1,
+          "actions": [
+            {"kind": "MOVE_CAPTURE", "from": [0, 4], "to": [1, 3]},
+            {"kind": "SWAP", "from": [4, 0], "to": [3, 0]},
+            {"kind": "MOVE_CAPTURE", "from": [1, 3], "to": [2, 2]},
+            {"kind": "SWAP", "from": [4, 1], "to": [3, 1]},
+            {"kind": "MOVE_CAPTURE", "from": [2, 2], "to": [3, 2]},
+            {"kind": "SWAP", "from": [4, 3], "to": [3, 3]},
+            {"kind": "MOVE_CAPTURE", "from": [3, 2], "to": [4, 2]},
+            {"kind": "SWAP", "from": [4, 4], "to": [3, 4]},
+            {"kind": "MOVE_CAPTURE", "from": [0, 0], "to": [1, 1]},
+            {"kind": "SWAP", "from": [3, 0], "to": [2, 0]},
+            {"kind": "MOVE_CAPTURE", "from": [1, 1], "to": [2, 2]},
+            {"kind": "SWAP", "from": [3, 1], "to": [2, 1]},
+            {"kind": "MOVE_CAPTURE", "from": [2, 2], "to": [3, 2]},
+            {"kind": "SWAP", "from": [3, 3], "to": [2, 3]},
+            {"kind": "MOVE_CAPTURE", "from": [0, 1], "to": [1, 2]},
+            {"kind": "SWAP", "from": [3, 4], "to": [2, 4]},
+            {"kind": "MOVE_CAPTURE", "from": [1, 2], "to": [2, 2]},
+            {"kind": "SWAP", "from": [2, 0], "to": [1, 0]},
+            {"kind": "MOVE_CAPTURE", "from": [0, 3], "to": [1, 2]}
+          ],
+          "plies": 19,
+          "winner": "A",
+          "terminal_reason": "GOAL",
+          "earlier_terminal": false,
+          "actual_capture_count": 1,
+          "actual_swap_count": 0
+        },
+        {
+          "name": "b_reach_goal_with_swap",
+          "primary_replay_count": 1,
+          "independent_audit_replay_count": 1,
+          "actions": [
+            {"kind": "MOVE_CAPTURE", "from": [0, 4], "to": [1, 4]},
+            {"kind": "SWAP", "from": [4, 0], "to": [3, 0]},
+            {"kind": "MOVE_CAPTURE", "from": [1, 4], "to": [2, 4]},
+            {"kind": "SWAP", "from": [3, 0], "to": [2, 0]},
+            {"kind": "MOVE_CAPTURE", "from": [2, 4], "to": [3, 4]},
+            {"kind": "SWAP", "from": [2, 0], "to": [1, 0]},
+            {"kind": "MOVE_CAPTURE", "from": [3, 4], "to": [4, 4]},
+            {"kind": "SWAP", "from": [1, 0], "to": [0, 0]}
+          ],
+          "plies": 8,
+          "winner": "B",
+          "terminal_reason": "GOAL",
+          "earlier_terminal": false,
+          "actual_capture_count": 1,
+          "actual_swap_count": 1
+        }
+      ],
+      "forbidden_design_computation_counts": {
+        "games": 0,
+        "exact": 0,
+        "selection_and_or": 0,
+        "reachable_state_prefix": 0
+      }
+    },
+    {
+      "cell": 4,
+      "draft": 1,
+      "status": "DRAFT_STATIC_LANE_PASSED_FINAL_COHORT_ADMITTED",
+      "definition_hash": "5b5b5c4c88fcabe0017c8ecc2749a74c639ab6dd35a03cca8455106f416fca11",
+      "definition": {
+        "schema_version": 4,
+        "name": "full-rank-hop-capture-thread-v0",
+        "board_size": 5,
+        "first_player": "A",
+        "max_plies": 41,
+        "roles": {
+          "A": {
+            "action": {
+              "kind": "HOP",
+              "piece": "a",
+              "vectors": [[1, -1], [1, 0], [1, 1]]
+            },
+            "goal": {
+              "kind": "CONNECT_EDGES",
+              "piece": "a",
+              "edges": ["BOTTOM", "TOP"]
+            }
+          },
+          "B": {
+            "action": {
+              "kind": "MOVE_CAPTURE",
+              "piece": "b",
+              "vectors": [[-1, -1], [-1, 0], [-1, 1]]
+            },
+            "goal": {"kind": "REACH_EDGE", "piece": "b", "edge": "TOP"}
+          }
+        },
+        "initial_pieces": [
+          {"owner": "A", "piece": "a", "position": [0, 0]},
+          {"owner": "A", "piece": "a", "position": [0, 1]},
+          {"owner": "A", "piece": "a", "position": [0, 2]},
+          {"owner": "A", "piece": "a", "position": [0, 3]},
+          {"owner": "A", "piece": "a", "position": [0, 4]},
+          {"owner": "B", "piece": "b", "position": [4, 0]},
+          {"owner": "B", "piece": "b", "position": [4, 1]},
+          {"owner": "B", "piece": "b", "position": [4, 2]},
+          {"owner": "B", "piece": "b", "position": [4, 3]},
+          {"owner": "B", "piece": "b", "position": [4, 4]}
+        ]
+      },
+      "static_admission": {
+        "public_old_six_direct": false,
+        "public_old_six_role_swap": false,
+        "initial_terminal": false,
+        "initial_legal_action_count": 13,
+        "potential": "sum_A(4-row)+sum_B(row)",
+        "initial_potential": 40,
+        "max_natural_plies": 40,
+        "every_action_strict_decrease": true,
+        "ply_limit_unreachable": true,
+        "maximum_branching": 15,
+        "maximum_decisions_per_role": 20,
+        "t3_nodes_per_role": 72300
+      },
+      "prefixes": [
+        {
+          "name": "a_connect_goal",
+          "primary_replay_count": 1,
+          "independent_audit_replay_count": 1,
+          "actions": [
+            {"kind": "HOP", "from": [0, 1], "to": [1, 2]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 0], "to": [3, 0]},
+            {"kind": "HOP", "from": [0, 0], "to": [1, 1]},
+            {"kind": "MOVE_CAPTURE", "from": [3, 0], "to": [2, 0]},
+            {"kind": "HOP", "from": [1, 1], "to": [2, 2]},
+            {"kind": "MOVE_CAPTURE", "from": [2, 0], "to": [1, 0]},
+            {"kind": "HOP", "from": [0, 3], "to": [1, 3]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 3], "to": [3, 4]},
+            {"kind": "HOP", "from": [1, 3], "to": [2, 3]},
+            {"kind": "MOVE_CAPTURE", "from": [3, 4], "to": [2, 4]},
+            {"kind": "HOP", "from": [2, 3], "to": [3, 2]},
+            {"kind": "MOVE_CAPTURE", "from": [2, 4], "to": [1, 3]},
+            {"kind": "HOP", "from": [0, 4], "to": [1, 4]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 1], "to": [3, 1]},
+            {"kind": "HOP", "from": [1, 4], "to": [2, 4]},
+            {"kind": "MOVE_CAPTURE", "from": [3, 1], "to": [2, 1]},
+            {"kind": "HOP", "from": [2, 4], "to": [3, 3]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 2], "to": [3, 1]},
+            {"kind": "HOP", "from": [3, 3], "to": [4, 2]}
+          ],
+          "plies": 19,
+          "winner": "A",
+          "terminal_reason": "GOAL",
+          "earlier_terminal": false,
+          "actual_hop_count": 0,
+          "actual_capture_count": 0
+        },
+        {
+          "name": "actual_hop_nonterminal",
+          "primary_replay_count": 1,
+          "independent_audit_replay_count": 1,
+          "actions": [
+            {"kind": "HOP", "from": [0, 0], "to": [1, 0]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 0], "to": [3, 0]},
+            {"kind": "HOP", "from": [1, 0], "to": [2, 0]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 4], "to": [3, 4]},
+            {"kind": "HOP", "from": [2, 0], "to": [4, 0]}
+          ],
+          "plies": 5,
+          "winner": null,
+          "terminal_reason": null,
+          "earlier_terminal": false,
+          "actual_hop_count": 1,
+          "actual_capture_count": 0
+        },
+        {
+          "name": "b_reach_goal_with_capture",
+          "primary_replay_count": 1,
+          "independent_audit_replay_count": 1,
+          "actions": [
+            {"kind": "HOP", "from": [0, 0], "to": [1, 0]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 2], "to": [3, 2]},
+            {"kind": "HOP", "from": [0, 1], "to": [1, 1]},
+            {"kind": "MOVE_CAPTURE", "from": [3, 2], "to": [2, 2]},
+            {"kind": "HOP", "from": [0, 3], "to": [1, 3]},
+            {"kind": "MOVE_CAPTURE", "from": [2, 2], "to": [1, 2]},
+            {"kind": "HOP", "from": [0, 4], "to": [1, 4]},
+            {"kind": "MOVE_CAPTURE", "from": [1, 2], "to": [0, 2]}
+          ],
+          "plies": 8,
+          "winner": "B",
+          "terminal_reason": "GOAL",
+          "earlier_terminal": false,
+          "actual_hop_count": 0,
+          "actual_capture_count": 1
+        }
+      ],
+      "forbidden_design_computation_counts": {
+        "games": 0,
+        "exact": 0,
+        "selection_and_or": 0,
+        "reachable_state_prefix": 0
+      }
+    }
+  ]
+}

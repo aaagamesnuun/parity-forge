@@ -1,0 +1,371 @@
+{
+  "status": "FIXED_PROSPECTIVE_NOT_REGISTERED_NOT_PRODUCTION_EXECUTED",
+  "registration_status": "NOT_REGISTERED",
+  "production_count": 0,
+  "protocol_id": "plan0031-low-branching-complete-short-screen-v1",
+  "claim_boundary": {
+    "question": "Can the sole statically admitted low-branching definition complete both bounded short-force queries, remain unresolved by one cheap exact probe, and pass one small deterministic policy diagnostic?",
+    "human_rule_review_only": true,
+    "fairness_proved": false,
+    "general_hardness_proved": false,
+    "fun_proved": false,
+    "unknown_is_positive_evidence": false,
+    "draw_allowed": false
+  },
+  "design_record": {
+    "path": "experiments/proposals/plan0031-design-drafts-v0.json",
+    "sha256": "b047936221304388f8c5b52dce94ed2274ab5c0492f0bfdadefb21e54b074555",
+    "drafts_attempted": 3,
+    "drafts_admitted": 1,
+    "production_calls": 0
+  },
+  "stage_order": [
+    "SHORT_SCREEN",
+    "EXACT_PROBE",
+    "POLICY_DIAGNOSTIC"
+  ],
+  "policy_order": [
+    "T3_T3",
+    "T4_T4"
+  ],
+  "policy_identities": {
+    "T3": "terminal_only_minimax-v1-depth3",
+    "T4": "terminal_only_minimax-v1-depth4"
+  },
+  "limits": {
+    "game_max_nodes_per_role": 100000,
+    "exact_max_states": 100000,
+    "maximum_attempts": 11,
+    "maximum_run_artifact_files": 28,
+    "maximum_other_result_bytes": 2097152,
+    "maximum_published_bytes": 58720256,
+    "maximum_error_type_bytes": 256,
+    "maximum_error_message_bytes": 4096,
+    "maximum_full_regression_log_bytes": 16777216
+  },
+  "resource_ceilings": {
+    "short_query_misses": 585935,
+    "exact_searched_states": 100000,
+    "configured_game_agent_nodes": 1600000,
+    "policy_schedule_structural_nodes": 299200,
+    "configured_engine_ply_cap_slots": 384,
+    "d055_natural_game_plies": 376,
+    "adapter_internal_replay_transitions": 432,
+    "attempts": 11,
+    "run_artifact_files": 28,
+    "published_bytes": 58720256
+  },
+  "ranked_candidates": [
+    {
+      "rank": 1,
+      "cell": 1,
+      "identifier": "zigzag-hop-two-hunters-v0",
+      "definition_hash": "8c07cc4a89981b2b1533cfafd12081f71c72c0f79835172765fa4b9a3fa8600a",
+      "definition": {
+        "schema_version": 4,
+        "name": "zigzag-hop-two-hunters-v0",
+        "board_size": 5,
+        "first_player": "A",
+        "max_plies": 48,
+        "roles": {
+          "A": {
+            "action": {
+              "kind": "HOP",
+              "piece": "a",
+              "vectors": [
+                [
+                  1,
+                  0
+                ]
+              ]
+            },
+            "goal": {
+              "kind": "CONNECT_EDGES",
+              "piece": "a",
+              "edges": [
+                "LEFT",
+                "RIGHT"
+              ]
+            }
+          },
+          "B": {
+            "action": {
+              "kind": "MOVE_CAPTURE",
+              "piece": "b",
+              "vectors": [
+                [
+                  -1,
+                  0
+                ],
+                [
+                  0,
+                  -1
+                ]
+              ]
+            },
+            "goal": {
+              "kind": "ELIMINATE",
+              "piece": "a"
+            }
+          }
+        },
+        "initial_pieces": [
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              0,
+              2
+            ]
+          },
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              0,
+              4
+            ]
+          },
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              2,
+              1
+            ]
+          },
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              2,
+              3
+            ]
+          },
+          {
+            "owner": "B",
+            "piece": "b",
+            "position": [
+              4,
+              3
+            ]
+          },
+          {
+            "owner": "B",
+            "piece": "b",
+            "position": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      "potential": "2*SUM_A(4-row)+SUM_B(row+column)",
+      "max_natural_plies": 47,
+      "maximum_branching": 5,
+      "short_caps": {
+        "A7": 97655,
+        "B8": 488280
+      },
+      "conditional_effects_required": [
+        "ACTUAL_HOP_OVER_OCCUPIED_INTERMEDIATE",
+        "ACTUAL_MOVE_CAPTURE_CAPTURE"
+      ],
+      "seeds": {
+        "short": {
+          "A": 31001,
+          "B": 31002
+        },
+        "T3_T3": [
+          31100,
+          31101,
+          31102,
+          31103
+        ],
+        "T4_T4": [
+          31110,
+          31111,
+          31112,
+          31113
+        ]
+      }
+    }
+  ],
+  "schedule": [
+    {
+      "ordinal": 0,
+      "rank": 1,
+      "cell": 1,
+      "kind": "short_query",
+      "stage": "SHORT_SCREEN",
+      "target": "A",
+      "target_ply": 7,
+      "seed": 31001,
+      "max_nodes": 97655
+    },
+    {
+      "ordinal": 1,
+      "rank": 1,
+      "cell": 1,
+      "kind": "short_query",
+      "stage": "SHORT_SCREEN",
+      "target": "B",
+      "target_ply": 8,
+      "seed": 31002,
+      "max_nodes": 488280
+    },
+    {
+      "ordinal": 2,
+      "rank": 1,
+      "cell": 1,
+      "kind": "exact",
+      "stage": "EXACT_PROBE",
+      "max_states": 100000
+    },
+    {
+      "ordinal": 3,
+      "rank": 1,
+      "cell": 1,
+      "kind": "game",
+      "stage": "POLICY_DIAGNOSTIC",
+      "profile": "T3_T3",
+      "policy_a": "T3",
+      "policy_b": "T3",
+      "seed": 31100,
+      "max_nodes_per_role": 100000
+    },
+    {
+      "ordinal": 4,
+      "rank": 1,
+      "cell": 1,
+      "kind": "game",
+      "stage": "POLICY_DIAGNOSTIC",
+      "profile": "T3_T3",
+      "policy_a": "T3",
+      "policy_b": "T3",
+      "seed": 31101,
+      "max_nodes_per_role": 100000
+    },
+    {
+      "ordinal": 5,
+      "rank": 1,
+      "cell": 1,
+      "kind": "game",
+      "stage": "POLICY_DIAGNOSTIC",
+      "profile": "T3_T3",
+      "policy_a": "T3",
+      "policy_b": "T3",
+      "seed": 31102,
+      "max_nodes_per_role": 100000
+    },
+    {
+      "ordinal": 6,
+      "rank": 1,
+      "cell": 1,
+      "kind": "game",
+      "stage": "POLICY_DIAGNOSTIC",
+      "profile": "T3_T3",
+      "policy_a": "T3",
+      "policy_b": "T3",
+      "seed": 31103,
+      "max_nodes_per_role": 100000
+    },
+    {
+      "ordinal": 7,
+      "rank": 1,
+      "cell": 1,
+      "kind": "game",
+      "stage": "POLICY_DIAGNOSTIC",
+      "profile": "T4_T4",
+      "policy_a": "T4",
+      "policy_b": "T4",
+      "seed": 31110,
+      "max_nodes_per_role": 100000
+    },
+    {
+      "ordinal": 8,
+      "rank": 1,
+      "cell": 1,
+      "kind": "game",
+      "stage": "POLICY_DIAGNOSTIC",
+      "profile": "T4_T4",
+      "policy_a": "T4",
+      "policy_b": "T4",
+      "seed": 31111,
+      "max_nodes_per_role": 100000
+    },
+    {
+      "ordinal": 9,
+      "rank": 1,
+      "cell": 1,
+      "kind": "game",
+      "stage": "POLICY_DIAGNOSTIC",
+      "profile": "T4_T4",
+      "policy_a": "T4",
+      "policy_b": "T4",
+      "seed": 31112,
+      "max_nodes_per_role": 100000
+    },
+    {
+      "ordinal": 10,
+      "rank": 1,
+      "cell": 1,
+      "kind": "game",
+      "stage": "POLICY_DIAGNOSTIC",
+      "profile": "T4_T4",
+      "policy_a": "T4",
+      "policy_b": "T4",
+      "seed": 31113,
+      "max_nodes_per_role": 100000
+    }
+  ],
+  "gates": {
+    "short_screen": {
+      "all_queries_complete": true,
+      "a7_forced_win": false,
+      "b8_forced_win": false,
+      "censor_is": "FAILED_TECHNICAL"
+    },
+    "exact_probe": {
+      "complete_decisive_is": "NOT_SELECTED_TOO_EASILY_SOLVED",
+      "unknown_100000_is": "UNRESOLVED_WITHIN_BUDGET_AND_PROCEEDS_WITHOUT_CREDIT",
+      "draw_ply_limit_or_winnerless_is": "FAILED_TECHNICAL"
+    },
+    "policy_diagnostic": {
+      "complete_decisive_games": 8,
+      "minimum_a_wins": 1,
+      "minimum_b_wins": 1,
+      "minimum_goal_endings": 4,
+      "minimum_a_goal_endings": 1,
+      "minimum_b_goal_endings": 1,
+      "required_conditional_effects": [
+        "ACTUAL_HOP_OVER_OCCUPIED_INTERMEDIATE",
+        "ACTUAL_MOVE_CAPTURE_CAPTURE"
+      ],
+      "miss_is": "NOT_SELECTED_POLICY_DIAGNOSTIC"
+    },
+    "human_review": {
+      "requires_all_production_gates": true,
+      "requires_saved_only_audit": true,
+      "requires_full_regression_exit_zero": true,
+      "does_not_assert_fairness_hardness_or_fun": true
+    }
+  },
+  "no_retry": {
+    "resume": false,
+    "replacement": false,
+    "backfill": false,
+    "extra_seeds": false,
+    "depth_change": false,
+    "cap_change": false,
+    "threshold_change": false
+  }
+}

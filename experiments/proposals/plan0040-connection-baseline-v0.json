@@ -1,0 +1,296 @@
+{
+  "format": "parity-forge:connection-registration:v1",
+  "registration_id": "plan0040-connection-baseline-v0",
+  "status": "PROSPECTIVE_NOT_IMPLEMENTED",
+  "design_source": {
+    "path": "experiments/proposals/plan0039-objective-designs-v0.json",
+    "sha256": "3f7d7cf470dfe8ba4aec462423ddd9e3410631c07dd59d422f5e2f9cc1b7ffdc",
+    "sketch_id": "bridge-and-convert-9-a-v0",
+    "variation": "FIRST_PLAYER_A_OR_B_ONLY"
+  },
+  "definitions": [
+    {
+      "format": "parity-forge:connection:v1",
+      "id": "bridge-and-convert-9-a-v0",
+      "board": {
+        "size": 9,
+        "topology": "RHOMBUS_HEX_CELLS"
+      },
+      "first_player": "A",
+      "bridge_credits_A": 3,
+      "conversion_credits_B": 2,
+      "terminal_rule": "OPPOSITE_EDGE_CONNECTION"
+    },
+    {
+      "format": "parity-forge:connection:v1",
+      "id": "bridge-and-convert-9-b-v0",
+      "board": {
+        "size": 9,
+        "topology": "RHOMBUS_HEX_CELLS"
+      },
+      "first_player": "B",
+      "bridge_credits_A": 3,
+      "conversion_credits_B": 2,
+      "terminal_rule": "OPPOSITE_EDGE_CONNECTION"
+    }
+  ],
+  "definition_hashes": [
+    "ddcc30071df1fc22adc3ad679834c13b3bbf203d992ce01bf3e12e0a316eec93",
+    "54a173c9bbb69d36383cd464c2b01672dda46773666e7534c86f9b66efc27370"
+  ],
+  "mechanics": {
+    "neighbor_deltas": [
+      [
+        -1,
+        0
+      ],
+      [
+        -1,
+        1
+      ],
+      [
+        0,
+        -1
+      ],
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        -1
+      ],
+      [
+        1,
+        0
+      ]
+    ],
+    "initial_stones": {
+      "A": [],
+      "B": []
+    },
+    "goals": {
+      "A": "LEFT_RIGHT",
+      "B": "TOP_BOTTOM"
+    },
+    "actions": {
+      "PLACE_ONE": {
+        "roles": [
+          "A",
+          "B"
+        ],
+        "targets": "ONE_EMPTY_CELL",
+        "credits": 0
+      },
+      "BRIDGE_PAIR": {
+        "roles": [
+          "A"
+        ],
+        "targets": "TWO_DISTINCT_EMPTY_NEIGHBORS_UNORDERED",
+        "credit": "A_BRIDGE",
+        "cost": 1
+      },
+      "PLACE_AND_CONVERT": {
+        "roles": [
+          "B"
+        ],
+        "targets": "ONE_EMPTY_PLACE_CELL_AND_ONE_ADJACENT_PREEXISTING_A_CELL",
+        "credit": "B_CONVERSION",
+        "cost": 1
+      }
+    },
+    "atomic": true,
+    "pass": false,
+    "stone_removal": false,
+    "terminal_check": "AFTER_ALL_EFFECTS_BEFORE_SWITCH",
+    "terminal_to_move": "MOVER_RETAINED_ON_WIN; OTHERWISE_OTHER_PLAYER",
+    "no_legal_action_loses": false,
+    "invalid_terminal_reports": [
+      "BOTH_CONNECTIONS",
+      "FULL_BOARD_NO_CONNECTION"
+    ],
+    "definition_hash": "SHA256_OF_ASCII_JSON_SORTED_KEYS_COMPACT_SEPARATORS_EXCLUDING_ID",
+    "action_order": "PLACE_ONE_THEN_BRIDGE_PAIR_THEN_PLACE_AND_CONVERT; LEXICOGRAPHIC_COORDINATES_WITH_CANONICAL_PAIR_SORT",
+    "state_wire_fields": [
+      "a",
+      "b",
+      "bridge_left",
+      "conversion_left",
+      "to_move",
+      "plies",
+      "winner"
+    ],
+    "state_validation": "DISJOINT_IN_BOUNDS_NONNEGATIVE_BITMASKS; CREDITS_WITHIN_INITIAL; PLY_AND_STONE_COUNTS_MATCH_ROLE_TURN_COUNTS_AND_CREDIT_USE; TO_MOVE_AND_WINNER_MATCH_CONNECTIVITY; NO_POST_TERMINAL_ACTIONS"
+  },
+  "evaluator": {
+    "id": "connection-distance-v1",
+    "perspective": "A",
+    "path_cost": {
+      "own": 0,
+      "empty": 1,
+      "opponent": "IMPASSABLE"
+    },
+    "distance": "MINIMUM_VERTEX_COST_HEX_PATH_BETWEEN_ROLE_GOAL_EDGES; START_VERTEX_COST_INCLUDED; NO_PATH=N_SQUARED_PLUS_1",
+    "nonterminal_score": "DISTANCE_B_MINUS_DISTANCE_A",
+    "terminal_scores": {
+      "A": 1000,
+      "B": -1000
+    },
+    "credit_bonus": 0,
+    "limitation": "OPPONENT_STONES_ARE_BLOCKED_IN_STATIC_DISTANCE_EVEN_WHEN_B_CAN_CONVERT; SEARCH_MODELS_CONVERSION_EXPLICITLY; NOT_A_PROOF_HEURISTIC"
+  },
+  "policies": {
+    "random-v1": "UNIFORM_CHOICE_FROM_ALL_CANONICAL_LEGAL_ACTIONS; NO_SUCCESSOR_SEARCH; ACTION_MULTIPLICITY_BIAS_DISCLOSED",
+    "connection-greedy-v1": "DEPTH_ONE_FULL_ROOT_MINIMAX_WITH_REGISTERED_EVALUATOR_AND_SAME_BUDGET_ACCOUNTING",
+    "connection-search-v1": "ITERATIVE_DEEPENING_ALPHA_BETA_MAX_DEPTH_3; A_MAX_B_MIN; CANONICAL_ORDER_NO_TT_OR_BEAM; RETURN_LAST_FULLY_COMPLETED_ROOT_DEPTH_ONLY"
+  },
+  "tie_breaking": {
+    "root": "SEEDED_RANDOM_CHOICE_AMONG_EQUAL_BEST_ACTIONS_AT_LAST_COMPLETED_DEPTH",
+    "internal": "CANONICAL_ORDER",
+    "root_child_window": "EACH_ROOT_ACTION_SEARCHED_WITH_FULL_NEGATIVE_INFINITY_POSITIVE_INFINITY_WINDOW_SO_ROOT_TIE_SCORES_ARE_EXACT_AT_COMPLETED_DEPTH",
+    "rng": "PYTHON_RANDOM_RANDOM",
+    "role_seed_derivation": {
+      "A": "2*seed",
+      "B": "2*seed+1"
+    },
+    "random_calls": "RANDOM_POLICY_ONE_CHOICE_PER_DECISION; GREEDY_OR_SEARCH_ONE_TIE_CHOICE_AFTER_ITERATIVE_DEEPENING_NOT_PER_DEPTH"
+  },
+  "search": {
+    "max_transitions_per_decision": 32768,
+    "max_depth": 3,
+    "max_search_transitions_per_game": 3000000,
+    "charged": "EVERY_SPECULATIVE_SUCCESSOR_APPLY_INCLUDING_REPEATED_DEPTHS_AND_GREEDY; NO_HIDDEN_PREFLIGHT_SEARCH",
+    "separate_counters": [
+      "ACTUAL_APPLIED_GAME_ACTIONS",
+      "REFERENCE_REPLAY_TRANSITIONS"
+    ],
+    "no_completed_depth": "FIRST_CANONICAL_ACTION_WITH_FALLBACK_TRUE; NEVER_WIN_CERTIFICATE",
+    "no_remaining_game_budget": "UNKNOWN_GAME_NOT_LOSS",
+    "cpu_expired": "STOP_GAME_AS_UNKNOWN; NOT_A_FALLBACK_MOVE"
+  },
+  "profiles": [
+    {
+      "label": "search-self",
+      "A": "connection-search-v1",
+      "B": "connection-search-v1",
+      "seeds": [
+        40000,
+        40001
+      ]
+    },
+    {
+      "label": "greedy-self",
+      "A": "connection-greedy-v1",
+      "B": "connection-greedy-v1",
+      "seeds": [
+        40000,
+        40001
+      ]
+    },
+    {
+      "label": "search-a-greedy-b",
+      "A": "connection-search-v1",
+      "B": "connection-greedy-v1",
+      "seeds": [
+        40002
+      ]
+    },
+    {
+      "label": "greedy-a-search-b",
+      "A": "connection-greedy-v1",
+      "B": "connection-search-v1",
+      "seeds": [
+        40002
+      ]
+    },
+    {
+      "label": "search-a-random-b",
+      "A": "connection-search-v1",
+      "B": "random-v1",
+      "seeds": [
+        40003
+      ]
+    },
+    {
+      "label": "random-a-search-b",
+      "A": "random-v1",
+      "B": "connection-search-v1",
+      "seeds": [
+        40003
+      ]
+    }
+  ],
+  "limits": {
+    "batches": 1,
+    "max_games": 16,
+    "cpu_seconds": 14400,
+    "max_output_bytes": 16777216,
+    "initial_exact_queries": 0,
+    "root_processes": 1
+  },
+  "implementation": {
+    "new_python_files": [
+      "src/parity_forge/connection.py",
+      "src/parity_forge/connection_search.py",
+      "src/parity_forge/connection_batch.py",
+      "tests/test_connection.py",
+      "tests/test_connection_search.py",
+      "tests/test_connection_batch.py"
+    ],
+    "preserve_pins": "experiments/reports/plan0037-acceptance-evidence/python-source-pins.sha256",
+    "focused_integrated_invocations": 3,
+    "full_regression_starts": 1,
+    "test_fixture_scope": "SMALL_BOARD_AND_SYNTHETIC_STATES_FOR_FUNCTIONAL_TESTS_ONLY; NOT_DISCOVERY_CANDIDATES_OR_QUALITY_GAMES; NO_PRODUCTION_RUN_CALL_IN_TESTS",
+    "freeze_gate": "SIX_SOURCE_FILES_IMPLEMENTED; FOCUSED_PASS; INDEPENDENT_SOURCE_REVIEW_PASS; ACCEPTED_206_OLD_PINS_MATCH; ONE_FULL_REGRESSION_ACTUAL_PASS",
+    "api_contract": "docs/designs/connection-v1.md"
+  },
+  "execution": {
+    "run_root": "experiments/runs/connection-campaign-v1",
+    "run_id": "plan0040-connection-baseline-v0",
+    "claim": "experiments/runs/connection-campaign-v1/batch-1.json",
+    "output": "experiments/runs/connection-campaign-v1/plan0040-connection-baseline-v0",
+    "source_hashes_status": "PENDING_IMPLEMENTATION",
+    "seal": "SEPARATE_EXECUTABLE_MANIFEST_WITH_UNCHANGED_REGISTRATION_OBJECT_AND_BYTE_HASH_PLUS_ALL_SIX_SOURCE_HASHES; NEVER_EDIT_THIS_REGISTRATION_AFTER_RUN",
+    "before_launch": "CHECK_OLD_206_PINS_AND_SIX_SOURCE_PINS; MATCH_REGISTRATION; REQUIRE_FULL_SUITE_PASS; ATOMIC_EXCLUSIVE_CLAIM_AND_OUTPUT; PRESERVE_FAILED_CLAIM; NO_RETRY",
+    "replay": "ONCE_PER_COMPLETE_GAME_WITH_INDEPENDENT_SET_BASED_TRANSITION_AND_CONNECTIVITY_REFERENCE; NO_EXTRA_POLICY_GAMES",
+    "atomic_files": "EXCLUSIVE_CREATION_OF_REGISTRATION_RESULTS_RUNTIME_OR_FAILURE; NEVER_OVERWRITE",
+    "cpu_scope": "ALL_WORKER_CPU_INCLUDING_GENERATION_EVALUATION_REFERENCE_REPLAY_AND_SERIALIZATION; OS_HARD_BACKSTOP"
+  },
+  "reporting": {
+    "per_definition": [
+      "ROLE_WINS",
+      "FIRST_PLAYER_WINS",
+      "STATUS_COUNTS",
+      "POLICY_AND_SEED_SPLIT",
+      "PLIES",
+      "CREDIT_USAGE"
+    ],
+    "per_decision": [
+      "PLAYER",
+      "POLICY",
+      "ACTION",
+      "COMPLETED_DEPTH",
+      "SEARCH_TRANSITIONS",
+      "BUDGET_EXHAUSTED",
+      "FALLBACK"
+    ],
+    "quality_flags": {
+      "fairness": false,
+      "depth": false,
+      "fun": false,
+      "human_review_eligible": false
+    },
+    "interpretation": "NEW_FAMILY_BASELINE_ONLY; NOT_CAUSAL_IMPROVEMENT_OVER_OLD_EXHAUSTION_GAMES; PAIRED_SEEDS_NOT_INDEPENDENT_FAIRNESS_SAMPLES; NO_MATCHED_HALF_WINS_PROMOTION",
+    "stop": "AFTER_SINGLE_COHORT_AND_SAVED_RESULT_REVIEW; TECHNICAL_FAILURE_OR_RESOURCE_EXHAUSTION_PRESERVES_PARTIAL_UNKNOWN_AND_NO_RETRY",
+    "forbidden": [
+      "PARAMETER_TUNING",
+      "EXTRA_SEEDS_OR_BATCHES",
+      "OLD_EXHAUSTION_CAMPAIGN",
+      "OLD_EXACT_QUERY_RETRY",
+      "MODEL_PER_MOVE",
+      "SITE_OR_GITHUB_CHANGE",
+      "EXTERNAL_HUMAN_TRIAL",
+      "PAID_RESOURCES"
+    ]
+  }
+}

@@ -1,0 +1,268 @@
+{
+  "status": "FIXED_PROSPECTIVE_NOT_REGISTERED_NOT_PRODUCTION_EXECUTED",
+  "registration_status": "NOT_REGISTERED",
+  "production_count": 0,
+  "protocol_id": "plan0030-admission-first-four-structure-preselection-v1",
+  "exposure": "CELL1_UNCHANGED_OUTCOME_EXPOSED_PLAN0029_UNREGISTERED_SHORT_AND_OR_AND_REACHABLE_PREFIX_NOT_CONFIRMATION_CELLS2_TO_4_SOURCE_ONLY_STATIC_AND_FIXED_PREFIX_REPLAY",
+  "design_record": {
+    "path": "experiments/proposals/plan0030-design-drafts-v0.json",
+    "sha256": "7996a590f0bb4ec3ea2f5565c517593422218daaf2a4533b3e17aa5786741037",
+    "status": "DESIGN_STAGE_COMPLETE_FOUR_DEFINITIONS_COHORT_ADMITTED_NOT_REGISTERED_PRODUCTION_COUNT_ZERO"
+  },
+  "policy_order": ["T2_T2", "T3_T3"],
+  "policy_identities": {
+    "T2": "terminal_only_minimax-v1-depth2",
+    "T3": "terminal_only_minimax-v1-depth3"
+  },
+  "stage_order": ["SHORT_FOUR", "POLICY_GAMES", "EXACT", "BFS_PREFIX", "SHORT_SEVEN"],
+  "limits": {
+    "short_query_max_nodes": 100000,
+    "game_max_nodes_per_role": 100000,
+    "exact_max_states": 100000,
+    "bfs_stop_after_seen_states": 100001,
+    "maximum_attempts": 56,
+    "maximum_run_artifact_files": 118,
+    "maximum_published_bytes": 272629760,
+    "maximum_bfs_result_bytes": 8388608,
+    "maximum_other_result_bytes": 2097152,
+    "maximum_regression_log_bytes": 16777216
+  },
+  "gates": {
+    "short_four": {
+      "target_decisions": 4,
+      "target_ply": {"A": 7, "B": 8},
+      "required_result_by_target": "COMPLETE_FALSE"
+    },
+    "policy_games": {
+      "games_per_policy_cell": 4,
+      "decisive_games_required_per_policy_cell": 4,
+      "a_wins_minimum_per_policy_cell": 1,
+      "a_wins_maximum_per_policy_cell": 3,
+      "goal_endings_minimum_across_both_policy_cells": 4,
+      "a_goal_endings_minimum": 1,
+      "b_goal_endings_minimum": 1
+    },
+    "exact": {
+      "survivor_wire": {
+        "status": "UNKNOWN_CENSORED",
+        "actual_result": null,
+        "error": {
+          "searched_states": 100000,
+          "max_states": 100000
+        },
+        "replay_count": 0
+      }
+    },
+    "bfs_prefix": {
+      "minimum_seen_states": 100001,
+      "stored_edges": 0
+    },
+    "short_seven": {
+      "target_decisions": 7,
+      "target_ply": {"A": 13, "B": 14},
+      "required_result_by_target": "COMPLETE_FALSE"
+    }
+  },
+  "resource_ceilings": {
+    "sum_maximum_branching": 60,
+    "sum_max_natural_plies": 172,
+    "sum_max_plies": 176,
+    "sum_t3_nodes_per_role": 310890,
+    "t2_schedule_structural_nodes": 165120,
+    "t3_schedule_structural_nodes": 2487120,
+    "combined_schedule_structural_nodes": 2652240,
+    "all_game_role_calls_at_t3_conservative_bound": 4974240,
+    "configured_game_agent_nodes": 6400000,
+    "short_query_misses": 1600000,
+    "exact_searched_states": 400000,
+    "bfs_transitions": 6000060,
+    "sequential_bfs_memory": {
+      "unique_game_states": 100001,
+      "queue_references": 100001,
+      "state_digests": 100001,
+      "stored_graph_edges": 0
+    },
+    "adapter_internal_replay_transitions": 1584,
+    "actual_game_plies": 1408
+  },
+  "ranked_candidates": [
+    {
+      "rank": 1,
+      "cell": 1,
+      "definition_hash": "a6de32c2b481614901caeabd2f2414815088a2b60992a3c4a55b7041aa2b7908",
+      "max_natural_plies": 40,
+      "maximum_branching": 15,
+      "maximum_decisions_per_role": 20,
+      "t2_nodes_per_role": 4800,
+      "t3_nodes_per_role": 72300,
+      "seeds": {
+        "short_four": {"A": 30001, "B": 30002},
+        "T2_T2": [30100, 30101, 30102, 30103],
+        "T3_T3": [30110, 30111, 30112, 30113],
+        "short_seven": {"A": 30501, "B": 30502}
+      },
+      "definition": {
+        "schema_version": 4,
+        "name": "five-thread-hop-swap-connect-v0",
+        "board_size": 5,
+        "first_player": "A",
+        "max_plies": 41,
+        "roles": {
+          "A": {
+            "action": {"kind": "HOP", "piece": "a", "vectors": [[1, -1], [1, 0], [1, 1]]},
+            "goal": {"kind": "CONNECT_EDGES", "piece": "a", "edges": ["BOTTOM", "TOP"]}
+          },
+          "B": {
+            "action": {"kind": "SWAP", "piece": "b", "vectors": [[-1, -1], [-1, 0], [-1, 1]]},
+            "goal": {"kind": "CONNECT_EDGES", "piece": "b", "edges": ["BOTTOM", "TOP"]}
+          }
+        },
+        "initial_pieces": [
+          {"owner": "A", "piece": "a", "position": [0, 0]},
+          {"owner": "A", "piece": "a", "position": [0, 1]},
+          {"owner": "A", "piece": "a", "position": [0, 2]},
+          {"owner": "A", "piece": "a", "position": [0, 3]},
+          {"owner": "A", "piece": "a", "position": [0, 4]},
+          {"owner": "B", "piece": "b", "position": [4, 0]},
+          {"owner": "B", "piece": "b", "position": [4, 1]},
+          {"owner": "B", "piece": "b", "position": [4, 2]},
+          {"owner": "B", "piece": "b", "position": [4, 3]},
+          {"owner": "B", "piece": "b", "position": [4, 4]}
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "cell": 2,
+      "definition_hash": "641c04d91572f4b748e927fe45490233a1ff71eb61cd5ab030a0e54c57bef4be",
+      "max_natural_plies": 52,
+      "maximum_branching": 15,
+      "maximum_decisions_per_role": 26,
+      "t2_nodes_per_role": 6240,
+      "t3_nodes_per_role": 93990,
+      "seeds": {
+        "short_four": {"A": 30003, "B": 30004},
+        "T2_T2": [30200, 30201, 30202, 30203],
+        "T3_T3": [30210, 30211, 30212, 30213],
+        "short_seven": {"A": 30503, "B": 30504}
+      },
+      "definition": {
+        "schema_version": 4,
+        "name": "five-thread-push-capture-triad-v0",
+        "board_size": 5,
+        "first_player": "A",
+        "max_plies": 53,
+        "roles": {
+          "A": {
+            "action": {"kind": "PUSH", "piece": "a", "vectors": [[1, -1], [1, 0], [1, 1]]},
+            "goal": {"kind": "CONNECT_EDGES", "piece": "a", "edges": ["BOTTOM", "TOP"]}
+          },
+          "B": {
+            "action": {"kind": "MOVE_CAPTURE", "piece": "b", "vectors": [[-1, -1], [-1, 0], [-1, 1]]},
+            "goal": {"kind": "ELIMINATE", "piece": "a"}
+          }
+        },
+        "initial_pieces": [
+          {"owner": "A", "piece": "a", "position": [0, 0]},
+          {"owner": "A", "piece": "a", "position": [0, 1]},
+          {"owner": "A", "piece": "a", "position": [0, 2]},
+          {"owner": "A", "piece": "a", "position": [0, 3]},
+          {"owner": "A", "piece": "a", "position": [0, 4]},
+          {"owner": "B", "piece": "b", "position": [4, 0]},
+          {"owner": "B", "piece": "b", "position": [4, 2]},
+          {"owner": "B", "piece": "b", "position": [4, 4]}
+        ]
+      }
+    },
+    {
+      "rank": 3,
+      "cell": 3,
+      "definition_hash": "247adb1bd139def5650fdfe0f8e0f9a78bc36147b08a505ab27e64d9fa8b03be",
+      "max_natural_plies": 40,
+      "maximum_branching": 15,
+      "maximum_decisions_per_role": 20,
+      "t2_nodes_per_role": 4800,
+      "t3_nodes_per_role": 72300,
+      "seeds": {
+        "short_four": {"A": 30005, "B": 30006},
+        "T2_T2": [30300, 30301, 30302, 30303],
+        "T3_T3": [30310, 30311, 30312, 30313],
+        "short_seven": {"A": 30505, "B": 30506}
+      },
+      "definition": {
+        "schema_version": 4,
+        "name": "five-thread-capture-swap-bridge-v0",
+        "board_size": 5,
+        "first_player": "A",
+        "max_plies": 41,
+        "roles": {
+          "A": {
+            "action": {"kind": "MOVE_CAPTURE", "piece": "a", "vectors": [[1, -1], [1, 0], [1, 1]]},
+            "goal": {"kind": "CONNECT_EDGES", "piece": "a", "edges": ["BOTTOM", "TOP"]}
+          },
+          "B": {
+            "action": {"kind": "SWAP", "piece": "b", "vectors": [[-1, -1], [-1, 0], [-1, 1]]},
+            "goal": {"kind": "REACH_EDGE", "piece": "b", "edge": "TOP"}
+          }
+        },
+        "initial_pieces": [
+          {"owner": "A", "piece": "a", "position": [0, 0]},
+          {"owner": "A", "piece": "a", "position": [0, 1]},
+          {"owner": "A", "piece": "a", "position": [0, 2]},
+          {"owner": "A", "piece": "a", "position": [0, 3]},
+          {"owner": "A", "piece": "a", "position": [0, 4]},
+          {"owner": "B", "piece": "b", "position": [4, 0]},
+          {"owner": "B", "piece": "b", "position": [4, 1]},
+          {"owner": "B", "piece": "b", "position": [4, 2]},
+          {"owner": "B", "piece": "b", "position": [4, 3]},
+          {"owner": "B", "piece": "b", "position": [4, 4]}
+        ]
+      }
+    },
+    {
+      "rank": 4,
+      "cell": 4,
+      "definition_hash": "5b5b5c4c88fcabe0017c8ecc2749a74c639ab6dd35a03cca8455106f416fca11",
+      "max_natural_plies": 40,
+      "maximum_branching": 15,
+      "maximum_decisions_per_role": 20,
+      "t2_nodes_per_role": 4800,
+      "t3_nodes_per_role": 72300,
+      "seeds": {
+        "short_four": {"A": 30007, "B": 30008},
+        "T2_T2": [30400, 30401, 30402, 30403],
+        "T3_T3": [30410, 30411, 30412, 30413],
+        "short_seven": {"A": 30507, "B": 30508}
+      },
+      "definition": {
+        "schema_version": 4,
+        "name": "full-rank-hop-capture-thread-v0",
+        "board_size": 5,
+        "first_player": "A",
+        "max_plies": 41,
+        "roles": {
+          "A": {
+            "action": {"kind": "HOP", "piece": "a", "vectors": [[1, -1], [1, 0], [1, 1]]},
+            "goal": {"kind": "CONNECT_EDGES", "piece": "a", "edges": ["BOTTOM", "TOP"]}
+          },
+          "B": {
+            "action": {"kind": "MOVE_CAPTURE", "piece": "b", "vectors": [[-1, -1], [-1, 0], [-1, 1]]},
+            "goal": {"kind": "REACH_EDGE", "piece": "b", "edge": "TOP"}
+          }
+        },
+        "initial_pieces": [
+          {"owner": "A", "piece": "a", "position": [0, 0]},
+          {"owner": "A", "piece": "a", "position": [0, 1]},
+          {"owner": "A", "piece": "a", "position": [0, 2]},
+          {"owner": "A", "piece": "a", "position": [0, 3]},
+          {"owner": "A", "piece": "a", "position": [0, 4]},
+          {"owner": "B", "piece": "b", "position": [4, 0]},
+          {"owner": "B", "piece": "b", "position": [4, 1]},
+          {"owner": "B", "piece": "b", "position": [4, 2]},
+          {"owner": "B", "piece": "b", "position": [4, 3]},
+          {"owner": "B", "piece": "b", "position": [4, 4]}
+        ]
+      }
+    }
+  ]
+}

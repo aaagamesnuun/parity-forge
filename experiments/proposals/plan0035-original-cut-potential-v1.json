@@ -1,0 +1,143 @@
+{
+  "format": "parity-forge:cut-choose-potential-experiment:v1",
+  "id": "plan0035-original-cut-potential-v1",
+  "definition": {
+    "format": "parity-forge:cut-choose:v1",
+    "id": "bridge-cut-choose-4x4-v1",
+    "vertices": 16,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        7,
+        11
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        8,
+        12
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        9,
+        13
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        10,
+        14
+      ],
+      [
+        11,
+        15
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        14,
+        15
+      ]
+    ],
+    "left": [
+      0,
+      4,
+      8,
+      12
+    ],
+    "right": [
+      3,
+      7,
+      11,
+      15
+    ],
+    "roles": {
+      "A": "CUTTER",
+      "B": "BUILDER"
+    },
+    "terminal_rule": "SECURED_CONNECTS_ELSE_POTENTIAL_DISCONNECTED"
+  },
+  "definition_sha256": "e9d4174b4d1f7b58ea485a1e5614a7dd119033c93bd3c4fc0dd4a874d131bc02",
+  "source_chat_sha256": "c556724955d2d7fdfe65c5360ad960d0a9adadfc029fb7c18adeaec5ff522f25",
+  "source_pins": {
+    "src/parity_forge/cut_choose.py": "cb3ed063b6bebcf1abe2985f77492f94ec183eaecf9c15f29edc27c3e6b9810a",
+    "src/parity_forge/cut_choose_search.py": "d3b103f99e1d54294e6b4cdef45bb96eb80c5a8b76bc64c7358f9942b033d100",
+    "src/parity_forge/cut_choose_batch.py": "cc83cb569abfb7b823819763c76985e0fc1aff9842045bf6481052a2bb8c14ed",
+    "src/parity_forge/cut_choose_potential.py": "7d8902419a61a496029210fe19abd304178aed5cf5e5768a47d564388b685f1b",
+    "src/parity_forge/cut_choose_potential_batch.py": "be153b5e98898b8657d9614f3e81dbd4f815de92f671596fc8eb753d74922937",
+    "tests/test_cut_choose_potential.py": "495af51e7d0ce63696ff3a076a6ccf2f8b8de89bdc120cc2ccf9c56c0641ec63",
+    "tests/test_cut_choose_potential_batch.py": "193e0e3827a4fbd5aeab58aa51e1286a5ad67978da5a1583fd1f7931b9efe841"
+  },
+  "query": "EXACT_INITIAL_WINNER",
+  "limits": {
+    "nodes": 300000,
+    "transitions": 6000000,
+    "proof_arcs": 1000000,
+    "cpu_seconds": 1800,
+    "output_bytes": 16777216
+  }
+}

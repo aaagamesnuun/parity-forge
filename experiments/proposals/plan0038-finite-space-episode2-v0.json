@@ -1,0 +1,600 @@
+{
+  "format": "parity-forge:finite-space-batch:v1",
+  "run_id": "plan0038-finite-space-episode2-v0",
+  "episode": 2,
+  "definitions": [
+    {
+      "format": "parity-forge:finite-space:v1",
+      "id": "tile4-t-l-7-a-v0",
+      "board": {
+        "rows": 7,
+        "cols": 7,
+        "blocked": []
+      },
+      "first_player": "A",
+      "terminal_rule": "NO_LEGAL_ACTION_LOSES",
+      "roles": {
+        "A": {
+          "kind": "TILE",
+          "shapes": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                0
+              ]
+            ]
+          ]
+        },
+        "B": {
+          "kind": "TILE",
+          "shapes": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "format": "parity-forge:finite-space:v1",
+      "id": "tile4-t-l-7-b-v0",
+      "board": {
+        "rows": 7,
+        "cols": 7,
+        "blocked": []
+      },
+      "first_player": "B",
+      "terminal_rule": "NO_LEGAL_ACTION_LOSES",
+      "roles": {
+        "A": {
+          "kind": "TILE",
+          "shapes": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                0
+              ]
+            ]
+          ]
+        },
+        "B": {
+          "kind": "TILE",
+          "shapes": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                2,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                2
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                1,
+                2
+              ]
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "format": "parity-forge:finite-space:v1",
+      "id": "tile4-o-i-7-a-v0",
+      "board": {
+        "rows": 7,
+        "cols": 7,
+        "blocked": []
+      },
+      "first_player": "A",
+      "terminal_rule": "NO_LEGAL_ACTION_LOSES",
+      "roles": {
+        "A": {
+          "kind": "TILE",
+          "shapes": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          ]
+        },
+        "B": {
+          "kind": "TILE",
+          "shapes": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                0
+              ]
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "format": "parity-forge:finite-space:v1",
+      "id": "tile4-o-i-7-b-v0",
+      "board": {
+        "rows": 7,
+        "cols": 7,
+        "blocked": []
+      },
+      "first_player": "B",
+      "terminal_rule": "NO_LEGAL_ACTION_LOSES",
+      "roles": {
+        "A": {
+          "kind": "TILE",
+          "shapes": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          ]
+        },
+        "B": {
+          "kind": "TILE",
+          "shapes": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ],
+              [
+                0,
+                3
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                0
+              ],
+              [
+                3,
+                0
+              ]
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "definition_hashes": [
+    "871b5fa94e88a082701e63caf665d43f4bc9d418d4f219522dc73f9a533e8a52",
+    "5517385db29ef718b04f64668194c60428cf6468b7a64d63737571eafe009c7a",
+    "af92c1915b79ff5e2d96cb47844add44e6de9125db5fbf616815daff3691b673",
+    "3b6c65f6c07fe3bef26003fa6ecda502c41ddda6bf43ef2b67a5c389d7c8b4b9"
+  ],
+  "origins": [
+    {
+      "family": "TILE",
+      "source": "Plan0038 bounded idea resumption; geometry proposal, no novelty or quality claim.",
+      "change": "Same-area T4 versus L4, rotations only. New game definitions; unchanged engine, agents and evaluation."
+    },
+    {
+      "family": "TILE",
+      "source": "Plan0038 bounded idea resumption; geometry proposal, no novelty or quality claim.",
+      "change": "Same-area T4 versus L4, rotations only. New game definitions; unchanged engine, agents and evaluation."
+    },
+    {
+      "family": "TILE",
+      "source": "Plan0038 bounded idea resumption; geometry proposal, no novelty or quality claim.",
+      "change": "Same-area O4 versus I4. New game definitions; unchanged engine, agents and evaluation."
+    },
+    {
+      "family": "TILE",
+      "source": "Plan0038 bounded idea resumption; geometry proposal, no novelty or quality claim.",
+      "change": "Same-area O4 versus I4. New game definitions; unchanged engine, agents and evaluation."
+    }
+  ],
+  "profiles": [
+    {
+      "label": "deny-self",
+      "A": "deny-v1",
+      "B": "deny-v1",
+      "seeds": [
+        32000,
+        32001
+      ]
+    },
+    {
+      "label": "search-self",
+      "A": "mobility-search-v1",
+      "B": "mobility-search-v1",
+      "seeds": [
+        32000,
+        32001
+      ]
+    },
+    {
+      "label": "search-a-deny-b",
+      "A": "mobility-search-v1",
+      "B": "deny-v1",
+      "seeds": [
+        32002
+      ]
+    },
+    {
+      "label": "deny-a-search-b",
+      "A": "deny-v1",
+      "B": "mobility-search-v1",
+      "seeds": [
+        32002
+      ]
+    },
+    {
+      "label": "search-a-random-b",
+      "A": "mobility-search-v1",
+      "B": "random-v1",
+      "seeds": [
+        32003
+      ]
+    },
+    {
+      "label": "random-a-search-b",
+      "A": "random-v1",
+      "B": "mobility-search-v1",
+      "seeds": [
+        32003
+      ]
+    }
+  ],
+  "search": {
+    "max_nodes": 512,
+    "max_depth": 2,
+    "game_max_nodes": 50000
+  },
+  "proof": {
+    "max_plies": 3,
+    "max_nodes": 50000
+  },
+  "limits": {
+    "max_games": 32,
+    "cpu_seconds": 14400,
+    "max_output_bytes": 16777216
+  },
+  "source_hashes": {
+    "src/parity_forge/__init__.py": "c734c6201b5115bdf7c46859bc38e34748a346f47f8d9e04b93c20a1546c850e",
+    "src/parity_forge/dsl.py": "971a4fb9ad495d753f3b8884c0c215cc24363522f83dabf8e3989d72d9bc3df0",
+    "src/parity_forge/engine.py": "14c5e0af50e5977a2a9336fe5303d019572574ac832d0f0f348e727ee523cac2",
+    "src/parity_forge/finite_space.py": "358cc6d9cbbb31111a9f15164855b5540c1f16dced7441a2e399075a3d6d644d",
+    "src/parity_forge/finite_space_batch.py": "09f4f14fe494700792c1ff8c2ae6262a82d31c74b406392e8065af25a2d51a3e",
+    "src/parity_forge/finite_space_search.py": "1cd676715717f0d14459367d722966d9793cd4c821c0c0285ea5544c208c9bb9",
+    "tests/test_finite_space.py": "eea09f687790114c922f8e472c7cd263f708dd3e532a29e2fa9ca5560fb53dcc",
+    "tests/test_finite_space_batch.py": "e7b1f4b80c63d8c0ea5e5c2c447dc8f602ba646856f7e5acbdc7376a14f151d1",
+    "tests/test_finite_space_search.py": "8e74dc5ec85f780be9ea3159248c4ad04409efa45733ffbf10fda1a7e5bbf5b1"
+  }
+}

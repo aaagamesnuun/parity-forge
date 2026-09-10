@@ -1,0 +1,30 @@
+{
+  "status": "FIXED_PROSPECTIVE_NOT_REGISTERED_NOT_PLAYED",
+  "exposure": "PLAN0024_OUTCOME_GUIDED_DEVELOPMENT_NOT_CONFIRMATION",
+  "definitions": [
+    {
+      "schema_version": 4,
+      "name": "three-runners-two-staggered-orthogonal-hunters",
+      "board_size": 5,
+      "first_player": "A",
+      "max_plies": 25,
+      "roles": {
+        "A": {
+          "action": {"kind": "MOVE", "piece": "a", "vectors": [[1,-1],[1,0],[1,1]]},
+          "goal": {"kind": "REACH_EDGE", "piece": "a", "edge": "BOTTOM"}
+        },
+        "B": {
+          "action": {"kind": "MOVE_CAPTURE", "piece": "b", "vectors": [[-1,0],[0,-1],[0,1],[1,0]]},
+          "goal": {"kind": "ELIMINATE", "piece": "a"}
+        }
+      },
+      "initial_pieces": [
+        {"owner": "A", "piece": "a", "position": [0,1]},
+        {"owner": "A", "piece": "a", "position": [0,2]},
+        {"owner": "A", "piece": "a", "position": [0,3]},
+        {"owner": "B", "piece": "b", "position": [2,3]},
+        {"owner": "B", "piece": "b", "position": [3,1]}
+      ]
+    }
+  ]
+}

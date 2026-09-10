@@ -1,0 +1,64 @@
+{
+  "status": "DRAFT_NOT_REGISTERED_NOT_PLAYED",
+  "purpose": "Two fixed first-player conditions for a source-only candidate proposal; not an executed experiment or qualified game.",
+  "definitions": [
+    {
+      "schema_version": 4,
+      "name": "capture-hop-full-ranks-v0",
+      "board_size": 5,
+      "first_player": "A",
+      "max_plies": 41,
+      "roles": {
+        "A": {
+          "action": {"kind": "MOVE_CAPTURE", "piece": "a", "vectors": [[1, -1], [1, 0], [1, 1]]},
+          "goal": {"kind": "REACH_EDGE", "piece": "a", "edge": "BOTTOM"}
+        },
+        "B": {
+          "action": {"kind": "HOP", "piece": "b", "vectors": [[-1, -1], [-1, 0], [-1, 1]]},
+          "goal": {"kind": "REACH_EDGE", "piece": "b", "edge": "TOP"}
+        }
+      },
+      "initial_pieces": [
+        {"owner": "A", "piece": "a", "position": [0, 0]},
+        {"owner": "A", "piece": "a", "position": [0, 1]},
+        {"owner": "A", "piece": "a", "position": [0, 2]},
+        {"owner": "A", "piece": "a", "position": [0, 3]},
+        {"owner": "A", "piece": "a", "position": [0, 4]},
+        {"owner": "B", "piece": "b", "position": [4, 0]},
+        {"owner": "B", "piece": "b", "position": [4, 1]},
+        {"owner": "B", "piece": "b", "position": [4, 2]},
+        {"owner": "B", "piece": "b", "position": [4, 3]},
+        {"owner": "B", "piece": "b", "position": [4, 4]}
+      ]
+    },
+    {
+      "schema_version": 4,
+      "name": "capture-hop-full-ranks-v0",
+      "board_size": 5,
+      "first_player": "B",
+      "max_plies": 41,
+      "roles": {
+        "A": {
+          "action": {"kind": "MOVE_CAPTURE", "piece": "a", "vectors": [[1, -1], [1, 0], [1, 1]]},
+          "goal": {"kind": "REACH_EDGE", "piece": "a", "edge": "BOTTOM"}
+        },
+        "B": {
+          "action": {"kind": "HOP", "piece": "b", "vectors": [[-1, -1], [-1, 0], [-1, 1]]},
+          "goal": {"kind": "REACH_EDGE", "piece": "b", "edge": "TOP"}
+        }
+      },
+      "initial_pieces": [
+        {"owner": "A", "piece": "a", "position": [0, 0]},
+        {"owner": "A", "piece": "a", "position": [0, 1]},
+        {"owner": "A", "piece": "a", "position": [0, 2]},
+        {"owner": "A", "piece": "a", "position": [0, 3]},
+        {"owner": "A", "piece": "a", "position": [0, 4]},
+        {"owner": "B", "piece": "b", "position": [4, 0]},
+        {"owner": "B", "piece": "b", "position": [4, 1]},
+        {"owner": "B", "piece": "b", "position": [4, 2]},
+        {"owner": "B", "piece": "b", "position": [4, 3]},
+        {"owner": "B", "piece": "b", "position": [4, 4]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,952 @@
+{
+  "format": "parity-forge:finite-space-batch:v1",
+  "run_id": "plan0032-finite-space-episode1-v0",
+  "episode": 1,
+  "definitions": [
+    {
+      "format": "parity-forge:finite-space:v1",
+      "id": "tile-i-l-7-a-v0",
+      "board": {
+        "rows": 7,
+        "cols": 7,
+        "blocked": []
+      },
+      "first_player": "A",
+      "terminal_rule": "NO_LEGAL_ACTION_LOSES",
+      "roles": {
+        "A": {
+          "kind": "TILE",
+          "shapes": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                0
+              ]
+            ]
+          ]
+        },
+        "B": {
+          "kind": "TILE",
+          "shapes": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "format": "parity-forge:finite-space:v1",
+      "id": "tile-i-l-7-b-v0",
+      "board": {
+        "rows": 7,
+        "cols": 7,
+        "blocked": []
+      },
+      "first_player": "B",
+      "terminal_rule": "NO_LEGAL_ACTION_LOSES",
+      "roles": {
+        "A": {
+          "kind": "TILE",
+          "shapes": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                0
+              ]
+            ]
+          ]
+        },
+        "B": {
+          "kind": "TILE",
+          "shapes": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "format": "parity-forge:finite-space:v1",
+      "id": "tile-i-l-9-a-v0",
+      "board": {
+        "rows": 9,
+        "cols": 9,
+        "blocked": []
+      },
+      "first_player": "A",
+      "terminal_rule": "NO_LEGAL_ACTION_LOSES",
+      "roles": {
+        "A": {
+          "kind": "TILE",
+          "shapes": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                0
+              ]
+            ]
+          ]
+        },
+        "B": {
+          "kind": "TILE",
+          "shapes": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "format": "parity-forge:finite-space:v1",
+      "id": "tile-i-l-9-b-v0",
+      "board": {
+        "rows": 9,
+        "cols": 9,
+        "blocked": []
+      },
+      "first_player": "B",
+      "terminal_rule": "NO_LEGAL_ACTION_LOSES",
+      "roles": {
+        "A": {
+          "kind": "TILE",
+          "shapes": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                0,
+                2
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                2,
+                0
+              ]
+            ]
+          ]
+        },
+        "B": {
+          "kind": "TILE",
+          "shapes": [
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                0
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            [
+              [
+                0,
+                1
+              ],
+              [
+                1,
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "format": "parity-forge:finite-space:v1",
+      "id": "trail-two-three-r2-a-v0",
+      "board": {
+        "rows": 7,
+        "cols": 7,
+        "blocked": []
+      },
+      "first_player": "A",
+      "terminal_rule": "NO_LEGAL_ACTION_LOSES",
+      "roles": {
+        "A": {
+          "kind": "TRAIL",
+          "vectors": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "max_distance": 2,
+          "starts": [
+            [
+              1,
+              1
+            ],
+            [
+              5,
+              1
+            ]
+          ]
+        },
+        "B": {
+          "kind": "TRAIL",
+          "vectors": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "max_distance": 1,
+          "starts": [
+            [
+              1,
+              5
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "format": "parity-forge:finite-space:v1",
+      "id": "trail-two-three-r2-b-v0",
+      "board": {
+        "rows": 7,
+        "cols": 7,
+        "blocked": []
+      },
+      "first_player": "B",
+      "terminal_rule": "NO_LEGAL_ACTION_LOSES",
+      "roles": {
+        "A": {
+          "kind": "TRAIL",
+          "vectors": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "max_distance": 2,
+          "starts": [
+            [
+              1,
+              1
+            ],
+            [
+              5,
+              1
+            ]
+          ]
+        },
+        "B": {
+          "kind": "TRAIL",
+          "vectors": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "max_distance": 1,
+          "starts": [
+            [
+              1,
+              5
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "format": "parity-forge:finite-space:v1",
+      "id": "trail-two-three-r6-a-v0",
+      "board": {
+        "rows": 7,
+        "cols": 7,
+        "blocked": []
+      },
+      "first_player": "A",
+      "terminal_rule": "NO_LEGAL_ACTION_LOSES",
+      "roles": {
+        "A": {
+          "kind": "TRAIL",
+          "vectors": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "max_distance": 6,
+          "starts": [
+            [
+              1,
+              1
+            ],
+            [
+              5,
+              1
+            ]
+          ]
+        },
+        "B": {
+          "kind": "TRAIL",
+          "vectors": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "max_distance": 1,
+          "starts": [
+            [
+              1,
+              5
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              5
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "format": "parity-forge:finite-space:v1",
+      "id": "trail-two-three-r6-b-v0",
+      "board": {
+        "rows": 7,
+        "cols": 7,
+        "blocked": []
+      },
+      "first_player": "B",
+      "terminal_rule": "NO_LEGAL_ACTION_LOSES",
+      "roles": {
+        "A": {
+          "kind": "TRAIL",
+          "vectors": [
+            [
+              -1,
+              0
+            ],
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ]
+          ],
+          "max_distance": 6,
+          "starts": [
+            [
+              1,
+              1
+            ],
+            [
+              5,
+              1
+            ]
+          ]
+        },
+        "B": {
+          "kind": "TRAIL",
+          "vectors": [
+            [
+              -1,
+              -1
+            ],
+            [
+              -1,
+              0
+            ],
+            [
+              -1,
+              1
+            ],
+            [
+              0,
+              -1
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              -1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "max_distance": 1,
+          "starts": [
+            [
+              1,
+              5
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              5,
+              5
+            ]
+          ]
+        }
+      }
+    }
+  ],
+  "definition_hashes": [
+    "67a721d34733219e5b69f100195bd6f7700582062ebcfa9dfb0a1e82929bc860",
+    "333080e68ca9e0607aa56045b2c8e7719111381e8bd388ab9fe23ce02334d52e",
+    "c1adb315f400039450fce89affcf11a34977c5c80d231308cd2ee14d72711d1d",
+    "5537de9104c3f805b658d69051959d6b0cd66c8e845ef3a719f788253e4d03ed",
+    "f50bc60b6c421f89e56f2da572cdc9c921eb220b8d00e587d97f21d6371d0d4f",
+    "f688933ab36471e5db3cdc7e89993c6e335cf648d21e6829e769899eab97bc57",
+    "0d88b1e97a4a8e6378c1d9881ef3326e09051e85585b04ca2b328484c7408a79",
+    "c8ca6767b34668b93ccccd02c053317bb440494e7929000d1a235cd53cbd49d6"
+  ],
+  "origins": [
+    {
+      "family": "TILE",
+      "source": "Plan0032 new finite-space skeleton: straight versus bent triomino free placement; not an old DSL candidate.",
+      "change": "7x7 empty board; A uses I triomino in two orientations, B uses L triomino in four orientations; first player A. Size and first-player variants of one skeleton, not independent mechanisms."
+    },
+    {
+      "family": "TILE",
+      "source": "Plan0032 new finite-space skeleton: straight versus bent triomino free placement; not an old DSL candidate.",
+      "change": "7x7 empty board; A uses I triomino in two orientations, B uses L triomino in four orientations; first player B. Size and first-player variants of one skeleton, not independent mechanisms."
+    },
+    {
+      "family": "TILE",
+      "source": "Plan0032 new finite-space skeleton: straight versus bent triomino free placement; not an old DSL candidate.",
+      "change": "9x9 empty board; A uses I triomino in two orientations, B uses L triomino in four orientations; first player A. Size and first-player variants of one skeleton, not independent mechanisms."
+    },
+    {
+      "family": "TILE",
+      "source": "Plan0032 new finite-space skeleton: straight versus bent triomino free placement; not an old DSL candidate.",
+      "change": "9x9 empty board; A uses I triomino in two orientations, B uses L triomino in four orientations; first player B. Size and first-player variants of one skeleton, not independent mechanisms."
+    },
+    {
+      "family": "TRAIL",
+      "source": "Plan0032 new finite-space skeleton: fewer long-range pieces versus more short-range pieces; moving closes the origin permanently.",
+      "change": "7x7 empty board except five initial pieces; A has two orthogonal range-2 pieces, B has three eight-direction range-1 pieces; first player A. Range and first-player variants of one skeleton."
+    },
+    {
+      "family": "TRAIL",
+      "source": "Plan0032 new finite-space skeleton: fewer long-range pieces versus more short-range pieces; moving closes the origin permanently.",
+      "change": "7x7 empty board except five initial pieces; A has two orthogonal range-2 pieces, B has three eight-direction range-1 pieces; first player B. Range and first-player variants of one skeleton."
+    },
+    {
+      "family": "TRAIL",
+      "source": "Plan0032 new finite-space skeleton: fewer long-range pieces versus more short-range pieces; moving closes the origin permanently.",
+      "change": "7x7 empty board except five initial pieces; A has two orthogonal range-6 pieces, B has three eight-direction range-1 pieces; first player A. Range and first-player variants of one skeleton."
+    },
+    {
+      "family": "TRAIL",
+      "source": "Plan0032 new finite-space skeleton: fewer long-range pieces versus more short-range pieces; moving closes the origin permanently.",
+      "change": "7x7 empty board except five initial pieces; A has two orthogonal range-6 pieces, B has three eight-direction range-1 pieces; first player B. Range and first-player variants of one skeleton."
+    }
+  ],
+  "profiles": [
+    {
+      "label": "deny-self",
+      "A": "deny-v1",
+      "B": "deny-v1",
+      "seeds": [
+        32000,
+        32001
+      ]
+    },
+    {
+      "label": "search-self",
+      "A": "mobility-search-v1",
+      "B": "mobility-search-v1",
+      "seeds": [
+        32000,
+        32001
+      ]
+    },
+    {
+      "label": "search-a-deny-b",
+      "A": "mobility-search-v1",
+      "B": "deny-v1",
+      "seeds": [
+        32002
+      ]
+    },
+    {
+      "label": "deny-a-search-b",
+      "A": "deny-v1",
+      "B": "mobility-search-v1",
+      "seeds": [
+        32002
+      ]
+    },
+    {
+      "label": "search-a-random-b",
+      "A": "mobility-search-v1",
+      "B": "random-v1",
+      "seeds": [
+        32003
+      ]
+    },
+    {
+      "label": "random-a-search-b",
+      "A": "random-v1",
+      "B": "mobility-search-v1",
+      "seeds": [
+        32003
+      ]
+    }
+  ],
+  "search": {
+    "max_nodes": 512,
+    "max_depth": 2,
+    "game_max_nodes": 50000
+  },
+  "proof": {
+    "max_plies": 3,
+    "max_nodes": 50000
+  },
+  "limits": {
+    "max_games": 64,
+    "cpu_seconds": 14400,
+    "max_output_bytes": 16777216
+  },
+  "source_hashes": {
+    "src/parity_forge/__init__.py": "c734c6201b5115bdf7c46859bc38e34748a346f47f8d9e04b93c20a1546c850e",
+    "src/parity_forge/dsl.py": "971a4fb9ad495d753f3b8884c0c215cc24363522f83dabf8e3989d72d9bc3df0",
+    "src/parity_forge/engine.py": "14c5e0af50e5977a2a9336fe5303d019572574ac832d0f0f348e727ee523cac2",
+    "src/parity_forge/finite_space.py": "358cc6d9cbbb31111a9f15164855b5540c1f16dced7441a2e399075a3d6d644d",
+    "src/parity_forge/finite_space_batch.py": "09f4f14fe494700792c1ff8c2ae6262a82d31c74b406392e8065af25a2d51a3e",
+    "src/parity_forge/finite_space_search.py": "1cd676715717f0d14459367d722966d9793cd4c821c0c0285ea5544c208c9bb9",
+    "tests/test_finite_space.py": "eea09f687790114c922f8e472c7cd263f708dd3e532a29e2fa9ca5560fb53dcc",
+    "tests/test_finite_space_batch.py": "e7b1f4b80c63d8c0ea5e5c2c447dc8f602ba646856f7e5acbdc7376a14f151d1",
+    "tests/test_finite_space_search.py": "8e74dc5ec85f780be9ea3159248c4ad04409efa45733ffbf10fda1a7e5bbf5b1"
+  }
+}

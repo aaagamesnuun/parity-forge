@@ -1,0 +1,664 @@
+{
+  "status": "DESIGN_STAGE_COMPLETE_CELL1_STATICALLY_ADMITTED_CELL2_BOTH_DRAFTS_REJECTED_SINGLE_CANDIDATE_COHORT_FROZEN_PRODUCTION_COUNT_ZERO",
+  "production_count": 0,
+  "exposure": "SOURCE_ONLY_PREPLAN_IDEAS_POTENTIALS_PREFIXES_AND_BOUNDED_ARGUMENTS_NOT_PLAN0031_SELECTION_EVIDENCE",
+  "draft_ceiling": {
+    "structures": 2,
+    "drafts_per_structure": 2,
+    "maximum_total_drafts": 4,
+    "maximum_prefixes_per_draft": 4,
+    "maximum_replay_lanes_per_prefix": 2,
+    "maximum_prefix_replays": 32,
+    "maximum_prefix_transitions": 2560,
+    "replacement_structures": 0,
+    "backfill": false
+  },
+  "design_summary": {
+    "structures_fixed": 2,
+    "drafts_attempted": 3,
+    "drafts_admitted": 1,
+    "drafts_rejected_by_complete_source_strategy": 2,
+    "drafts_not_generated": 1,
+    "replacement_structures": 0,
+    "production_calls": 0,
+    "game_calls": 0,
+    "exact_calls": 0,
+    "solver_calls": 0,
+    "bfs_calls": 0,
+    "primary_prefix_replays": 4,
+    "independent_prefix_replays": 4,
+    "total_prefix_replays": 8,
+    "total_prefix_transitions": 68,
+    "final_admitted_cells": [
+      1
+    ],
+    "human_review_eligible": false
+  },
+  "fixed_rank": [
+    "CELL-1-HOP-CONNECT__MOVE_CAPTURE-ELIMINATE",
+    "CELL-2-PUSH-CONNECT__MOVE-CONNECT"
+  ],
+  "drafts": [
+    {
+      "cell": 1,
+      "draft": 1,
+      "identifier": "zigzag-hop-two-hunters-v0",
+      "definition": {
+        "schema_version": 4,
+        "name": "zigzag-hop-two-hunters-v0",
+        "board_size": 5,
+        "first_player": "A",
+        "max_plies": 48,
+        "roles": {
+          "A": {
+            "action": {
+              "kind": "HOP",
+              "piece": "a",
+              "vectors": [
+                [
+                  1,
+                  0
+                ]
+              ]
+            },
+            "goal": {
+              "kind": "CONNECT_EDGES",
+              "piece": "a",
+              "edges": [
+                "LEFT",
+                "RIGHT"
+              ]
+            }
+          },
+          "B": {
+            "action": {
+              "kind": "MOVE_CAPTURE",
+              "piece": "b",
+              "vectors": [
+                [
+                  -1,
+                  0
+                ],
+                [
+                  0,
+                  -1
+                ]
+              ]
+            },
+            "goal": {
+              "kind": "ELIMINATE",
+              "piece": "a"
+            }
+          }
+        },
+        "initial_pieces": [
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              0,
+              2
+            ]
+          },
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              0,
+              4
+            ]
+          },
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              2,
+              1
+            ]
+          },
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              2,
+              3
+            ]
+          },
+          {
+            "owner": "B",
+            "piece": "b",
+            "position": [
+              4,
+              3
+            ]
+          },
+          {
+            "owner": "B",
+            "piece": "b",
+            "position": [
+              4,
+              4
+            ]
+          }
+        ]
+      },
+      "proposed_static": {
+        "potential": "2*SUM_A(4-row)+SUM_B(row+column)",
+        "initial_potential": 47,
+        "maximum_branching": 5,
+        "source_only_status": "PRIMARY_AND_INDEPENDENT_STATIC_LANES_PASS",
+        "definition_hash": "8c07cc4a89981b2b1533cfafd12081f71c72c0f79835172765fa4b9a3fa8600a",
+        "role_neutral_action_goal_hash": "11424669f093770c9c4adb4bf4c580fb90ddb8eafb3be0d4c5a0a5ce2c80fae8",
+        "role_neutral_definition_hash": "a817a3509377d1b25b42e1a939bd6312a28602df651d5e109eef5f5a1be5ad09",
+        "public_old_six_direct": false,
+        "public_old_six_role_swap": false,
+        "initial_terminal": false,
+        "initial_a_legal_actions": 5,
+        "counterfactual_initial_b_legal_actions": 3,
+        "strict_decrease_argument": {
+          "a_ordinary_hop_delta": -2,
+          "a_actual_hop_delta": -4,
+          "b_up_or_left_move_delta": -1,
+          "b_capture_extra": "removes the captured A piece's nonnegative term",
+          "ply_limit_unreachable": true
+        },
+        "branching_argument": "A has at most five pieces and one vector; B has at most two pieces and two vectors. Thus b<=5, and the initial A state attains five.",
+        "s4_nodes": 780,
+        "forty_decisions_s4_nodes": 31200,
+        "a7_nodes": 97655,
+        "b8_nodes": 488280,
+        "bounded_simple_strategy_review": "No source-level universal A-by-ply7 or B-by-ply8 strategy was found. This is only a bounded negative review and is not an absence proof."
+      },
+      "prefixes": [
+        {
+          "name": "a_connect_goal",
+          "primary_replay_count": 1,
+          "independent_audit_replay_count": 1,
+          "actions": [
+            {"kind": "HOP", "from": [0, 0], "to": [1, 0]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 3], "to": [4, 2]},
+            {"kind": "HOP", "from": [1, 0], "to": [2, 0]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 2], "to": [4, 1]},
+            {"kind": "HOP", "from": [0, 2], "to": [1, 2]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 1], "to": [4, 0]},
+            {"kind": "HOP", "from": [1, 2], "to": [2, 2]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 4], "to": [3, 4]},
+            {"kind": "HOP", "from": [0, 4], "to": [1, 4]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 0], "to": [3, 0]},
+            {"kind": "HOP", "from": [1, 4], "to": [2, 4]}
+          ],
+          "plies": 11,
+          "winner": "A",
+          "terminal_reason": "GOAL",
+          "earlier_terminal": false,
+          "actual_hop_count": 0,
+          "actual_capture_count": 0,
+          "primary_potential_trace": [47, 45, 44, 42, 41, 39, 38, 36, 35, 33, 32, 30],
+          "primary_trace_digest": "4891c9aab0785e166c8f5eca829d9545a68374ae3b5614cf2d76c1073f805d06",
+          "independent_chain_digest": "e0e18623f183aad824505dfd81501b41d532fd135465e2efe3a86f3d1c77d72d"
+        },
+        {
+          "name": "b_eliminate_goal_with_capture",
+          "primary_replay_count": 1,
+          "independent_audit_replay_count": 1,
+          "actions": [
+            {"kind": "HOP", "from": [2, 3], "to": [3, 3]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 3], "to": [3, 3]},
+            {"kind": "HOP", "from": [0, 4], "to": [1, 4]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 4], "to": [3, 4]},
+            {"kind": "HOP", "from": [1, 4], "to": [2, 4]},
+            {"kind": "MOVE_CAPTURE", "from": [3, 4], "to": [2, 4]},
+            {"kind": "HOP", "from": [0, 2], "to": [1, 2]},
+            {"kind": "MOVE_CAPTURE", "from": [3, 3], "to": [3, 2]},
+            {"kind": "HOP", "from": [1, 2], "to": [2, 2]},
+            {"kind": "MOVE_CAPTURE", "from": [3, 2], "to": [2, 2]},
+            {"kind": "HOP", "from": [0, 0], "to": [1, 0]},
+            {"kind": "MOVE_CAPTURE", "from": [2, 2], "to": [2, 1]},
+            {"kind": "HOP", "from": [1, 0], "to": [2, 0]},
+            {"kind": "MOVE_CAPTURE", "from": [2, 1], "to": [2, 0]}
+          ],
+          "plies": 14,
+          "winner": "B",
+          "terminal_reason": "GOAL",
+          "earlier_terminal": false,
+          "actual_hop_count": 0,
+          "actual_capture_count": 5,
+          "primary_potential_trace": [47, 45, 42, 40, 39, 37, 32, 30, 29, 27, 22, 20, 15, 13, 8],
+          "primary_trace_digest": "63a4d08d5dcd802339e453e5bb9792e9e8c8b64200ca7d4ebfb4e3adce8c5310",
+          "independent_chain_digest": "8443fd5ad09f850e1a1c90fa947fc7c41fbe6e24d52e8d1e260508dd70462dbd"
+        },
+        {
+          "name": "actual_hop_nonterminal",
+          "primary_replay_count": 1,
+          "independent_audit_replay_count": 1,
+          "actions": [
+            {"kind": "HOP", "from": [0, 0], "to": [1, 0]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 4], "to": [3, 4]},
+            {"kind": "HOP", "from": [1, 0], "to": [2, 0]},
+            {"kind": "MOVE_CAPTURE", "from": [3, 4], "to": [2, 4]},
+            {"kind": "HOP", "from": [0, 2], "to": [1, 2]},
+            {"kind": "MOVE_CAPTURE", "from": [2, 4], "to": [1, 4]},
+            {"kind": "HOP", "from": [0, 4], "to": [2, 4]}
+          ],
+          "plies": 7,
+          "winner": null,
+          "terminal_reason": null,
+          "earlier_terminal": false,
+          "actual_hop_count": 1,
+          "actual_capture_count": 0,
+          "primary_potential_trace": [47, 45, 44, 42, 41, 39, 38, 34],
+          "primary_trace_digest": "948aa38b850c5c7355423545f485d82335878703607ba9b70044b4783ec89b37",
+          "independent_chain_digest": "385d0ecbe8a3316522e619280e36d19d522f708b9389f43175efe6fe97dffb22"
+        },
+        {
+          "name": "actual_capture_nonterminal",
+          "primary_replay_count": 1,
+          "independent_audit_replay_count": 1,
+          "actions": [
+            {"kind": "HOP", "from": [2, 3], "to": [3, 3]},
+            {"kind": "MOVE_CAPTURE", "from": [4, 3], "to": [3, 3]}
+          ],
+          "plies": 2,
+          "winner": null,
+          "terminal_reason": null,
+          "earlier_terminal": false,
+          "actual_hop_count": 0,
+          "actual_capture_count": 1,
+          "primary_potential_trace": [47, 45, 42],
+          "primary_trace_digest": "07b61045e39cc5a6df666a6b9c868ee6c87a1cc33da3ccec649f320885786995",
+          "independent_chain_digest": "42220a9cfb785ee2b30d4a1a851c38aae7a22007e11305022dbc86555237746c"
+        }
+      ],
+      "static_disposition": "ADMITTED_TO_FROZEN_COHORT_NOT_GAME_QUALITY_EVIDENCE"
+    },
+    {
+      "cell": 2,
+      "draft": 1,
+      "identifier": "interleaved-push-step-bridges-v0",
+      "definition": {
+        "schema_version": 4,
+        "name": "interleaved-push-step-bridges-v0",
+        "board_size": 5,
+        "first_player": "A",
+        "max_plies": 47,
+        "roles": {
+          "A": {
+            "action": {
+              "kind": "PUSH",
+              "piece": "a",
+              "vectors": [
+                [
+                  1,
+                  0
+                ]
+              ]
+            },
+            "goal": {
+              "kind": "CONNECT_EDGES",
+              "piece": "a",
+              "edges": [
+                "LEFT",
+                "RIGHT"
+              ]
+            }
+          },
+          "B": {
+            "action": {
+              "kind": "MOVE",
+              "piece": "b",
+              "vectors": [
+                [
+                  -1,
+                  0
+                ]
+              ]
+            },
+            "goal": {
+              "kind": "CONNECT_EDGES",
+              "piece": "b",
+              "edges": [
+                "LEFT",
+                "RIGHT"
+              ]
+            }
+          }
+        },
+        "initial_pieces": [
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              0,
+              2
+            ]
+          },
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              0,
+              4
+            ]
+          },
+          {
+            "owner": "B",
+            "piece": "b",
+            "position": [
+              2,
+              0
+            ]
+          },
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              2,
+              1
+            ]
+          },
+          {
+            "owner": "B",
+            "piece": "b",
+            "position": [
+              2,
+              2
+            ]
+          },
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              2,
+              3
+            ]
+          },
+          {
+            "owner": "B",
+            "piece": "b",
+            "position": [
+              2,
+              4
+            ]
+          },
+          {
+            "owner": "B",
+            "piece": "b",
+            "position": [
+              4,
+              1
+            ]
+          },
+          {
+            "owner": "B",
+            "piece": "b",
+            "position": [
+              4,
+              3
+            ]
+          }
+        ]
+      },
+      "proposed_static": {
+        "potential": "2*SUM_A(4-row)+SUM_B(row)",
+        "initial_potential": 46,
+        "maximum_branching": 5,
+        "source_only_status": "INDEPENDENT_SOURCE_REJECTION_NO_PREFIX_REPLAY",
+        "definition_hash": "c423f6b4fa626ffd2da3857c20c9cf93582fc1978ac7ccae31e4a76054b3c5bf",
+        "role_neutral_action_goal_hash": "880fb7575397c1edce3e763e1e394c0f81f8df4eccc8728a38c092244c728546",
+        "role_neutral_definition_hash": "b1ad0e46b822d9cf6553f901374405c8e80cef75e094926ced0a03abaedf5de5",
+        "public_old_six_direct": false,
+        "public_old_six_role_swap": false,
+        "initial_terminal": false,
+        "initial_a_legal_actions": 5,
+        "counterfactual_initial_b_legal_actions": 5,
+        "d055_potential_valid": true,
+        "actual_all_play_upper_bound_plies": 9,
+        "rejection_reasons": [
+          "A has a universal ply5 no-legal-action win by closing a fresh one-cell column gap on each A turn.",
+          "A's explicit CONNECT_EDGES goal is unreachable before all legal play ends.",
+          "B's explicit CONNECT_EDGES goal is unreachable before all legal play ends."
+        ],
+        "source_prefixes_not_replayed": [
+          {
+            "name": "actual_push_nonterminal",
+            "replay_count": 0,
+            "actions": [
+              {"kind": "PUSH", "from": [0, 0], "to": [1, 0]},
+              {"kind": "MOVE", "from": [4, 1], "to": [3, 1]},
+              {"kind": "PUSH", "from": [1, 0], "to": [2, 0]}
+            ]
+          }
+        ]
+      },
+      "static_disposition": "REJECTED_SIMPLE_UNIVERSAL_A_PLY5_AND_BOTH_EXPLICIT_GOALS_DEAD"
+    },
+    {
+      "cell": 2,
+      "draft": 2,
+      "identifier": "staggered-push-step-bridges-v1",
+      "dependency": "Changes only A (2,1) to (1,1) and B (2,0) to (4,0) after draft1 exposed five one-cell gaps, a universal A ply5 closure, and two dead explicit goals.",
+      "definition": {
+        "schema_version": 4,
+        "name": "staggered-push-step-bridges-v1",
+        "board_size": 5,
+        "first_player": "A",
+        "max_plies": 51,
+        "roles": {
+          "A": {
+            "action": {
+              "kind": "PUSH",
+              "piece": "a",
+              "vectors": [
+                [
+                  1,
+                  0
+                ]
+              ]
+            },
+            "goal": {
+              "kind": "CONNECT_EDGES",
+              "piece": "a",
+              "edges": [
+                "LEFT",
+                "RIGHT"
+              ]
+            }
+          },
+          "B": {
+            "action": {
+              "kind": "MOVE",
+              "piece": "b",
+              "vectors": [
+                [
+                  -1,
+                  0
+                ]
+              ]
+            },
+            "goal": {
+              "kind": "CONNECT_EDGES",
+              "piece": "b",
+              "edges": [
+                "LEFT",
+                "RIGHT"
+              ]
+            }
+          }
+        },
+        "initial_pieces": [
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              0,
+              0
+            ]
+          },
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              0,
+              2
+            ]
+          },
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              0,
+              4
+            ]
+          },
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              1,
+              1
+            ]
+          },
+          {
+            "owner": "B",
+            "piece": "b",
+            "position": [
+              2,
+              2
+            ]
+          },
+          {
+            "owner": "A",
+            "piece": "a",
+            "position": [
+              2,
+              3
+            ]
+          },
+          {
+            "owner": "B",
+            "piece": "b",
+            "position": [
+              2,
+              4
+            ]
+          },
+          {
+            "owner": "B",
+            "piece": "b",
+            "position": [
+              4,
+              0
+            ]
+          },
+          {
+            "owner": "B",
+            "piece": "b",
+            "position": [
+              4,
+              1
+            ]
+          },
+          {
+            "owner": "B",
+            "piece": "b",
+            "position": [
+              4,
+              3
+            ]
+          }
+        ]
+      },
+      "proposed_static": {
+        "potential": "2*SUM_A(4-row)+SUM_B(row)",
+        "initial_potential": 50,
+        "maximum_branching": 5,
+        "source_only_status": "INDEPENDENT_SOURCE_REJECTION_NO_PREFIX_REPLAY",
+        "definition_hash": "8caa98bd96f377ba42bbdb4f92594a5e41ce904b1dbd06deb599f1db76e26231",
+        "name_free_d4_hash": "90125f0e31472a2a890a9e8e8283957f4850dee32e1d0b00eb77cc2aef533e35",
+        "role_neutral_action_goal_hash": "880fb7575397c1edce3e763e1e394c0f81f8df4eccc8728a38c092244c728546",
+        "role_neutral_definition_hash": "a696bcde78229bcd0c82563a33bea663b03e4b7b5357cd7164666d0b89702a37",
+        "public_old_six_direct": false,
+        "public_old_six_role_swap": false,
+        "plans20_through_30_or_cell1_collision": false,
+        "initial_terminal": false,
+        "initial_a_legal_actions": 5,
+        "counterfactual_initial_b_legal_actions": 5,
+        "d055_potential_valid": true,
+        "ply_limit_unreachable": true,
+        "actual_all_play_upper_bound_plies": 15,
+        "s4_nodes": 780,
+        "forty_decisions_s4_nodes": 31200,
+        "a7_nodes": 97655,
+        "b8_nodes": 488280,
+        "unreplayed_source_liveness": {
+          "a_goal_prefix_available": true,
+          "b_goal_prefix_available": true,
+          "actual_push_in_both_prefixes": true,
+          "replay_count": 0,
+          "reason_not_replayed": "The source-level universal strategy rejects the draft before prefix replay.",
+          "prefixes": [
+            {
+              "name": "a_connect_goal_source_only",
+              "winner": "A",
+              "terminal_reason": "GOAL",
+              "plies": 13,
+              "actions": [
+                {"kind": "PUSH", "from": [0, 0], "to": [1, 0]},
+                {"kind": "MOVE", "from": [2, 2], "to": [1, 2]},
+                {"kind": "PUSH", "from": [0, 2], "to": [1, 2]},
+                {"kind": "MOVE", "from": [2, 4], "to": [1, 4]},
+                {"kind": "PUSH", "from": [1, 2], "to": [2, 2]},
+                {"kind": "MOVE", "from": [4, 1], "to": [3, 1]},
+                {"kind": "PUSH", "from": [0, 4], "to": [1, 4]},
+                {"kind": "MOVE", "from": [3, 1], "to": [2, 1]},
+                {"kind": "PUSH", "from": [1, 4], "to": [2, 4]},
+                {"kind": "MOVE", "from": [4, 0], "to": [3, 0]},
+                {"kind": "PUSH", "from": [1, 1], "to": [2, 1]},
+                {"kind": "MOVE", "from": [3, 0], "to": [2, 0]},
+                {"kind": "PUSH", "from": [1, 0], "to": [2, 0]}
+              ]
+            },
+            {
+              "name": "b_connect_goal_source_only",
+              "winner": "B",
+              "terminal_reason": "GOAL",
+              "plies": 7,
+              "actions": [
+                {"kind": "PUSH", "from": [0, 2], "to": [1, 2]},
+                {"kind": "MOVE", "from": [4, 0], "to": [3, 0]},
+                {"kind": "PUSH", "from": [1, 2], "to": [2, 2]},
+                {"kind": "MOVE", "from": [4, 1], "to": [3, 1]},
+                {"kind": "PUSH", "from": [0, 4], "to": [1, 4]},
+                {"kind": "MOVE", "from": [4, 3], "to": [3, 3]},
+                {"kind": "PUSH", "from": [1, 4], "to": [2, 4]}
+              ]
+            }
+          ]
+        },
+        "universal_strategy": {
+          "winner": "A",
+          "maximum_ply": 9,
+          "strategy": "On A1 through A4, use an ordinary PUSH step in the leftmost column whose gap d_i=B_row-A_row-1 is positive; after B4 the total gap is zero, then make any legal actual PUSH on A5.",
+          "proof": "Initial gaps are [3,2,1,1,1]. Each prescribed A step and every B move reduces their sum by one, so B4 leaves all columns adjacent. Before A5 the A/B row sums are 7/12; A5 changes them to 8/13, so neither side can have five pieces on one common row. At least one B moved upward, hence one actual PUSH is legal. The gap remains zero and B then has no legal MOVE, so A wins by NO_LEGAL_ACTION."
+        }
+      },
+      "static_disposition": "REJECTED_SIMPLE_UNIVERSAL_A_PLY9"
+    }
+  ]
+}

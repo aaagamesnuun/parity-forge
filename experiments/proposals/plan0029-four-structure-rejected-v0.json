@@ -1,0 +1,172 @@
+{
+  "status": "DESIGN_STAGE_CLOSED_OLD_SIX_OVERLAP_AND_SLOT_DRIFT_NOT_REGISTERED_NOT_PRODUCTION_EXECUTED",
+  "exposure": "SOURCE_DESIGNED_AFTER_PLAN0028_AND_UNREGISTERED_DEVELOPMENT_PARSE_GOAL_EFFECT_SHORT_AND_OR_AND_REACHABLE_STATE_SCREENS_EXPOSED_NOT_CONFIRMATION",
+  "fixed_rank": [
+    "a6de32c2b481614901caeabd2f2414815088a2b60992a3c4a55b7041aa2b7908",
+    "5ea276e3fcde390b6518506920a70c8f8a9f0ee3f5430f830f0a82a8e266dbca",
+    "e9d53457ba49c4aaba0940181f4cc0a3277f150df3cc7fab37a08cb95c52b769",
+    "d5d1a7cc4ce883a8ff9644fe153551d25ef7fbaf50e3401df62b157bb87067b6"
+  ],
+  "static_admission": {
+    "public_old_six_overlap_by_rank": [false, false, true, false],
+    "failed_ranks": [3, 4],
+    "rank_4_contract_structure": "CONVERT_ELIMINATE_VS_HOP_REACH_EDGE",
+    "rank_4_materialized_structure": "CONVERT_ELIMINATE_VS_HOP_CONNECT_EDGES",
+    "rank_4_slot_drift": true,
+    "disposition": "PLAN_CLOSED_NO_SUBSTITUTION"
+  },
+  "definitions": [
+    {
+      "schema_version": 4,
+      "name": "five-thread-hop-swap-connect-v0",
+      "board_size": 5,
+      "first_player": "A",
+      "max_plies": 41,
+      "roles": {
+        "A": {
+          "action": {
+            "kind": "HOP",
+            "piece": "a",
+            "vectors": [[1, -1], [1, 0], [1, 1]]
+          },
+          "goal": {
+            "kind": "CONNECT_EDGES",
+            "piece": "a",
+            "edges": ["BOTTOM", "TOP"]
+          }
+        },
+        "B": {
+          "action": {
+            "kind": "SWAP",
+            "piece": "b",
+            "vectors": [[-1, -1], [-1, 0], [-1, 1]]
+          },
+          "goal": {
+            "kind": "CONNECT_EDGES",
+            "piece": "b",
+            "edges": ["BOTTOM", "TOP"]
+          }
+        }
+      },
+      "initial_pieces": [
+        {"owner": "A", "piece": "a", "position": [0, 0]},
+        {"owner": "A", "piece": "a", "position": [0, 1]},
+        {"owner": "A", "piece": "a", "position": [0, 2]},
+        {"owner": "A", "piece": "a", "position": [0, 3]},
+        {"owner": "A", "piece": "a", "position": [0, 4]},
+        {"owner": "B", "piece": "b", "position": [4, 0]},
+        {"owner": "B", "piece": "b", "position": [4, 1]},
+        {"owner": "B", "piece": "b", "position": [4, 2]},
+        {"owner": "B", "piece": "b", "position": [4, 3]},
+        {"owner": "B", "piece": "b", "position": [4, 4]}
+      ]
+    },
+    {
+      "schema_version": 4,
+      "name": "staggered-swap-capture-race-v0",
+      "board_size": 5,
+      "first_player": "A",
+      "max_plies": 25,
+      "roles": {
+        "A": {
+          "action": {
+            "kind": "SWAP",
+            "piece": "a",
+            "vectors": [[1, -1], [1, 0]]
+          },
+          "goal": {"kind": "REACH_EDGE", "piece": "a", "edge": "BOTTOM"}
+        },
+        "B": {
+          "action": {
+            "kind": "MOVE_CAPTURE",
+            "piece": "b",
+            "vectors": [[-1, -1], [-1, 0]]
+          },
+          "goal": {"kind": "REACH_EDGE", "piece": "b", "edge": "TOP"}
+        }
+      },
+      "initial_pieces": [
+        {"owner": "A", "piece": "a", "position": [0, 0]},
+        {"owner": "A", "piece": "a", "position": [0, 1]},
+        {"owner": "A", "piece": "a", "position": [0, 2]},
+        {"owner": "B", "piece": "b", "position": [4, 0]},
+        {"owner": "B", "piece": "b", "position": [4, 3]},
+        {"owner": "B", "piece": "b", "position": [4, 4]}
+      ]
+    },
+    {
+      "schema_version": 4,
+      "name": "staggered-push-hop-race-v0",
+      "board_size": 5,
+      "first_player": "A",
+      "max_plies": 37,
+      "roles": {
+        "A": {
+          "action": {
+            "kind": "PUSH",
+            "piece": "a",
+            "vectors": [[1, -1], [1, 0]]
+          },
+          "goal": {"kind": "REACH_EDGE", "piece": "a", "edge": "BOTTOM"}
+        },
+        "B": {
+          "action": {
+            "kind": "HOP",
+            "piece": "b",
+            "vectors": [[-1, 0], [-1, 1]]
+          },
+          "goal": {"kind": "REACH_EDGE", "piece": "b", "edge": "TOP"}
+        }
+      },
+      "initial_pieces": [
+        {"owner": "A", "piece": "a", "position": [0, 0]},
+        {"owner": "A", "piece": "a", "position": [0, 1]},
+        {"owner": "A", "piece": "a", "position": [0, 2]},
+        {"owner": "B", "piece": "b", "position": [4, 0]},
+        {"owner": "B", "piece": "b", "position": [4, 3]},
+        {"owner": "B", "piece": "b", "position": [4, 4]}
+      ]
+    },
+    {
+      "schema_version": 4,
+      "name": "diagonal-infection-weave-v0",
+      "board_size": 5,
+      "first_player": "A",
+      "max_plies": 17,
+      "roles": {
+        "A": {
+          "action": {
+            "kind": "CONVERT",
+            "piece": "a",
+            "vectors": [[-1, 0], [-1, 1]]
+          },
+          "goal": {"kind": "ELIMINATE", "piece": "b"}
+        },
+        "B": {
+          "action": {
+            "kind": "HOP",
+            "piece": "b",
+            "vectors": [[1, 0], [1, 1]]
+          },
+          "goal": {
+            "kind": "CONNECT_EDGES",
+            "piece": "b",
+            "edges": ["LEFT", "RIGHT"]
+          }
+        }
+      },
+      "initial_pieces": [
+        {"owner": "B", "piece": "b", "position": [1, 0]},
+        {"owner": "B", "piece": "b", "position": [1, 1]},
+        {"owner": "B", "piece": "b", "position": [1, 3]},
+        {"owner": "B", "piece": "b", "position": [1, 4]},
+        {"owner": "B", "piece": "b", "position": [2, 1]},
+        {"owner": "B", "piece": "b", "position": [2, 4]},
+        {"owner": "B", "piece": "b", "position": [3, 1]},
+        {"owner": "B", "piece": "b", "position": [3, 4]},
+        {"owner": "A", "piece": "a", "position": [4, 1]},
+        {"owner": "A", "piece": "a", "position": [4, 4]}
+      ]
+    }
+  ]
+}

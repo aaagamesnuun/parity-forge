@@ -1,0 +1,54 @@
+{
+  "format": "parity-forge-portable-verification-v1",
+  "observed_at": "2026-09-10T12:10:57.734Z",
+  "manifest_sha256": "d57061ba0554c5a94e3f0827fd77228a225e0419259438e7d83326230a366fea",
+  "verified_file_count": 380,
+  "source_code_unchanged": true,
+  "full_suite_run": false,
+  "production_games_run": 0,
+  "production_queries_run": 0,
+  "checks": [
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "parity_forge",
+        "--help"
+      ],
+      "environment": {
+        "PYTHONPATH": "src",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "signal": null,
+      "elapsed_ms": 653,
+      "output_sha256": "a30661204bc163f504130d2e4b6a9da1c265f7fb3d5e2689d52b6ac6d8e2c3eb",
+      "tests": null,
+      "summary": null
+    },
+    {
+      "argv": [
+        "python3",
+        "-m",
+        "unittest",
+        "-v",
+        "tests.test_dsl",
+        "tests.test_analysis",
+        "tests.test_connection",
+        "tests.test_connection_search",
+        "tests.test_cut_choose",
+        "tests.test_finite_space"
+      ],
+      "environment": {
+        "PYTHONPATH": "src",
+        "PYTHONDONTWRITEBYTECODE": "1"
+      },
+      "exit_code": 0,
+      "signal": null,
+      "elapsed_ms": 384,
+      "output_sha256": "c967181499103b429b0544561363dcf74f6cbb72146f9c0e7ad940b9ad8c184f",
+      "tests": 98,
+      "summary": "Ran 98 tests in 0.187s\n\nOK"
+    }
+  ]
+}

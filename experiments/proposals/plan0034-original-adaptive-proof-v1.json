@@ -1,0 +1,142 @@
+{
+  "format": "parity-forge:cut-choose-experiment:v1",
+  "id": "plan0034-original-adaptive-proof-v1",
+  "definition": {
+    "format": "parity-forge:cut-choose:v1",
+    "id": "bridge-cut-choose-4x4-v1",
+    "vertices": 16,
+    "edges": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        4
+      ],
+      [
+        1,
+        2
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        3,
+        7
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        4,
+        8
+      ],
+      [
+        5,
+        6
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        6,
+        7
+      ],
+      [
+        6,
+        10
+      ],
+      [
+        7,
+        11
+      ],
+      [
+        8,
+        9
+      ],
+      [
+        8,
+        12
+      ],
+      [
+        9,
+        10
+      ],
+      [
+        9,
+        13
+      ],
+      [
+        10,
+        11
+      ],
+      [
+        10,
+        14
+      ],
+      [
+        11,
+        15
+      ],
+      [
+        12,
+        13
+      ],
+      [
+        13,
+        14
+      ],
+      [
+        14,
+        15
+      ]
+    ],
+    "left": [
+      0,
+      4,
+      8,
+      12
+    ],
+    "right": [
+      3,
+      7,
+      11,
+      15
+    ],
+    "roles": {
+      "A": "CUTTER",
+      "B": "BUILDER"
+    },
+    "terminal_rule": "SECURED_CONNECTS_ELSE_POTENTIAL_DISCONNECTED"
+  },
+  "definition_sha256": "e9d4174b4d1f7b58ea485a1e5614a7dd119033c93bd3c4fc0dd4a874d131bc02",
+  "source_chat_sha256": "c556724955d2d7fdfe65c5360ad960d0a9adadfc029fb7c18adeaec5ff522f25",
+  "source_pins": {
+    "src/parity_forge/cut_choose.py": "cb3ed063b6bebcf1abe2985f77492f94ec183eaecf9c15f29edc27c3e6b9810a",
+    "src/parity_forge/cut_choose_search.py": "d3b103f99e1d54294e6b4cdef45bb96eb80c5a8b76bc64c7358f9942b033d100",
+    "src/parity_forge/cut_choose_batch.py": "cc83cb569abfb7b823819763c76985e0fc1aff9842045bf6481052a2bb8c14ed",
+    "tests/test_cut_choose.py": "85bdd6eb62f823bfbe375c60e174a0b81496215a267e194a88094ad83546c0fb",
+    "tests/test_cut_choose_search.py": "70cae53bd61de124317948b192be47e35a03ee660e7e703b157db0c20fe3c84e",
+    "tests/test_cut_choose_batch.py": "e60dc8fb441a23b2db734676dc79bbba32ba091485e21878462b2cc65b26c04f"
+  },
+  "query": "EXACT_INITIAL_WINNER",
+  "limits": {
+    "nodes": 300000,
+    "transitions": 6000000,
+    "proof_arcs": 1000000,
+    "cpu_seconds": 1800,
+    "output_bytes": 16777216
+  }
+}
